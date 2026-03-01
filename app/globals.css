@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -104,6 +104,10 @@
   animation: ant-wave 1s ease-in-out forwards;
 }
 
+.ant-walking.ant-paused {
+  animation-play-state: paused;
+}
+
 /* ---- TORCH GLOW ---- */
 @keyframes torch-flicker {
   0%, 100% { opacity: 0.8; transform: scale(1); }
@@ -116,6 +120,81 @@
   animation: torch-flicker 2s ease-in-out infinite;
   filter: blur(20px);
 }
+
+/* ---- PYRAMID TORCH FLAME ---- */
+.torch-flame {
+  animation: torch-flicker 1.5s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+/* ---- WORKER ANT PATHS ---- */
+/* Path 0: elliptical loop bottom-left to top-right */
+@keyframes worker-path-0 {
+  0%   { left: -20px; top: 180px; }
+  25%  { left: 60px;  top: 120px; }
+  50%  { left: 160px; top: 80px; }
+  75%  { left: 260px; top: 140px; }
+  100% { left: -20px; top: 180px; }
+}
+
+/* Path 1: top-right to bottom-left return */
+@keyframes worker-path-1 {
+  0%   { left: 280px; top: 100px; }
+  25%  { left: 200px; top: 60px; }
+  50%  { left: 100px; top: 100px; }
+  75%  { left: 20px;  top: 160px; }
+  100% { left: 280px; top: 100px; }
+}
+
+/* Path 2: bottom arc */
+@keyframes worker-path-2 {
+  0%   { left: -10px; top: 160px; }
+  25%  { left: 80px;  top: 190px; }
+  50%  { left: 180px; top: 190px; }
+  75%  { left: 260px; top: 150px; }
+  100% { left: -10px; top: 160px; }
+}
+
+/* Path 3: top arc */
+@keyframes worker-path-3 {
+  0%   { left: 300px; top: 140px; }
+  25%  { left: 220px; top: 90px; }
+  50%  { left: 120px; top: 70px; }
+  75%  { left: 30px;  top: 120px; }
+  100% { left: 300px; top: 140px; }
+}
+
+/* Path 4: small inner loop right side */
+@keyframes worker-path-4 {
+  0%   { left: 180px; top: 170px; }
+  25%  { left: 220px; top: 130px; }
+  50%  { left: 200px; top: 90px; }
+  75%  { left: 160px; top: 130px; }
+  100% { left: 180px; top: 170px; }
+}
+
+/* Path 5: small inner loop left side */
+@keyframes worker-path-5 {
+  0%   { left: 100px; top: 170px; }
+  25%  { left: 60px;  top: 130px; }
+  50%  { left: 80px;  top: 90px; }
+  75%  { left: 130px; top: 130px; }
+  100% { left: 100px; top: 170px; }
+}
+
+.worker-ant {
+  position: absolute;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.worker-ant-path-0 { animation-name: worker-path-0; }
+.worker-ant-path-1 { animation-name: worker-path-1; }
+.worker-ant-path-2 { animation-name: worker-path-2; }
+.worker-ant-path-3 { animation-name: worker-path-3; }
+.worker-ant-path-4 { animation-name: worker-path-4; }
+.worker-ant-path-5 { animation-name: worker-path-5; }
 
 /* ---- SCROLL INDICATOR ---- */
 @keyframes bounce-down {

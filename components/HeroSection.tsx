@@ -1,6 +1,8 @@
 "use client";
 
 import AntWalkingGroup from "./AntWalkingGroup";
+import AntPyramid from "./AntPyramid";
+import WorkerAnts from "./WorkerAnts";
 
 export default function HeroSection() {
   return (
@@ -139,28 +141,10 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      {/* Ant mound (center) */}
-      <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 pointer-events-none">
-        <svg
-          width="200"
-          height="80"
-          viewBox="0 0 200 80"
-          className="pixel-render"
-          style={{ shapeRendering: "crispEdges" }}
-        >
-          {/* Mound shape */}
-          <ellipse cx="100" cy="60" rx="90" ry="30" fill="#5C3A1E" />
-          <ellipse cx="100" cy="58" rx="80" ry="25" fill="#6B4F10" />
-          <ellipse cx="100" cy="56" rx="60" ry="18" fill="#8B6914" />
-          {/* Tunnel entrance (dark hole) */}
-          <ellipse cx="100" cy="60" rx="18" ry="14" fill="#1A0F0A" />
-          <ellipse cx="100" cy="58" rx="14" ry="10" fill="#0D0705" />
-          {/* Dirt specs */}
-          <rect x="40" y="50" width="3" height="3" fill="#3D2817" />
-          <rect x="150" y="52" width="3" height="3" fill="#3D2817" />
-          <rect x="80" y="42" width="2" height="2" fill="#3D2817" />
-          <rect x="120" y="44" width="2" height="2" fill="#3D2817" />
-        </svg>
+      {/* Ant Pyramid (center) */}
+      <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2" style={{ width: 300, height: 200 }}>
+        <AntPyramid />
+        <WorkerAnts />
       </div>
 
       {/* Content overlay */}
@@ -176,7 +160,7 @@ export default function HeroSection() {
         </h1>
 
         {/* Subtitle */}
-        <p className="font-[family-name:var(--font-silk)] text-sm sm:text-base text-earth-brown max-w-lg mb-8">
+        <p className="text-sm sm:text-base text-earth-brown max-w-lg mb-8">
           Building AI for Social Impact
         </p>
 

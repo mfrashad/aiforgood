@@ -6,14 +6,17 @@ interface PixelAntProps {
   size?: number;
   direction?: "left" | "right";
   className?: string;
+  onHoverChange?: (hovered: boolean) => void;
 }
 
 export default function PixelAnt({
   size = 32,
   direction = "right",
   className = "",
+  onHoverChange,
 }: PixelAntProps) {
   const [isWaving, setIsWaving] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const handleClick = useCallback(() => {
     if (isWaving) return;
@@ -21,13 +24,30 @@ export default function PixelAnt({
     setTimeout(() => setIsWaving(false), 1000);
   }, [isWaving]);
 
-  const scale = size / 32;
+  const handleMouseEnter = useCallback(() => {
+    setIsPaused(true);
+    onHoverChange?.(true);
+  }, [onHoverChange]);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsPaused(false);
+    onHoverChange?.(false);
+  }, [onHoverChange]);
+
   const flip = direction === "left" ? "scaleX(-1)" : "";
+
+  const walkingClass = isWaving
+    ? "paused ant-walking"
+    : isPaused
+      ? "ant-paused ant-walking"
+      : "ant-walking";
 
   return (
     <div
       onClick={handleClick}
-      className={`cursor-pointer select-none ${isWaving ? "paused ant-walking" : "ant-walking"} ${className}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={`cursor-pointer select-none ${walkingClass} ${className}`}
       style={{
         width: size,
         height: size * 0.75,

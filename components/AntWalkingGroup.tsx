@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useCallback } from "react";
 import PixelAnt from "./PixelAnt";
 
 interface WalkingAntConfig {
@@ -25,6 +26,31 @@ interface AntWalkingGroupProps {
   className?: string;
 }
 
+function WalkingAntWrapper({ ant }: { ant: WalkingAntConfig }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHoverChange = useCallback((hovered: boolean) => {
+    setIsHovered(hovered);
+  }, []);
+
+  return (
+    <div
+      className="absolute walking-ant"
+      style={{
+        top: ant.y,
+        animation: `${ant.direction === "right" ? "ant-walk-right" : "ant-walk-left"} ${ant.duration}s linear ${ant.delay}s infinite`,
+        animationPlayState: isHovered ? "paused" : "running",
+      }}
+    >
+      <PixelAnt
+        size={ant.size}
+        direction={ant.direction}
+        onHoverChange={handleHoverChange}
+      />
+    </div>
+  );
+}
+
 export default function AntWalkingGroup({
   ants = DEFAULT_ANTS,
   className = "",
@@ -32,16 +58,7 @@ export default function AntWalkingGroup({
   return (
     <div className={`relative w-full overflow-hidden ${className}`} style={{ height: 48 }}>
       {ants.map((ant) => (
-        <div
-          key={ant.id}
-          className="absolute"
-          style={{
-            top: ant.y,
-            animation: `${ant.direction === "right" ? "ant-walk-right" : "ant-walk-left"} ${ant.duration}s linear ${ant.delay}s infinite`,
-          }}
-        >
-          <PixelAnt size={ant.size} direction={ant.direction} />
-        </div>
+        <WalkingAntWrapper key={ant.id} ant={ant} />
       ))}
     </div>
   );
