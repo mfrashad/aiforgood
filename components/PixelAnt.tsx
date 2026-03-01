@@ -1,20 +1,27 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, forwardRef } from "react";
 
 interface PixelAntProps {
   size?: number;
   direction?: "left" | "right";
   className?: string;
   onHoverChange?: (hovered: boolean) => void;
+  showBrick?: boolean;
+  brickColor?: string;
 }
 
-export default function PixelAnt({
-  size = 32,
-  direction = "right",
-  className = "",
-  onHoverChange,
-}: PixelAntProps) {
+const PixelAnt = forwardRef<HTMLDivElement, PixelAntProps>(function PixelAnt(
+  {
+    size = 32,
+    direction = "right",
+    className = "",
+    onHoverChange,
+    showBrick = false,
+    brickColor = "#8B6914",
+  },
+  ref
+) {
   const [isWaving, setIsWaving] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -44,6 +51,7 @@ export default function PixelAnt({
 
   return (
     <div
+      ref={ref}
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -62,6 +70,19 @@ export default function PixelAnt({
         className="pixel-render"
         style={{ shapeRendering: "crispEdges" }}
       >
+        {/* Brick on back */}
+        {showBrick && (
+          <rect
+            x="8"
+            y="2"
+            width="10"
+            height="6"
+            fill={brickColor}
+            stroke="#3D2817"
+            strokeWidth="0.5"
+            className="brick-pickup"
+          />
+        )}
         {/* Body */}
         <rect x="10" y="8" width="12" height="8" fill="#8B5E3C" />
         {/* Head */}
@@ -180,4 +201,6 @@ export default function PixelAnt({
       </svg>
     </div>
   );
-}
+});
+
+export default PixelAnt;

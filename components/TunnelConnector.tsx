@@ -12,15 +12,37 @@ const TUNNEL_ANTS = [
 
 export default function TunnelConnector({ showAnts = true }: TunnelConnectorProps) {
   return (
-    <div className="relative py-8 px-6 overflow-hidden">
-      {/* Tunnel passage */}
-      <div className="max-w-4xl mx-auto relative">
+    <div className="relative py-4 overflow-hidden">
+      {/* Cave tunnel background image */}
+      <div
+        className="absolute inset-0 pixel-render"
+        style={{
+          backgroundImage: "url(/sprites/cave-tunnel.jpg)",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          opacity: 0.3,
+        }}
+      />
+
+      {/* Dark overlay to blend with surroundings */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse at center, transparent 20%, #0D0A1A 80%)",
+        }}
+      />
+
+      <div className="max-w-4xl mx-auto relative px-6">
         {/* Horizontal tunnel line */}
         <div className="h-[2px] bg-earth-mid/30 mx-12" />
 
-        {/* Small torch at center */}
+        {/* Teal crystal glow at center */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="w-6 h-6 rounded-full bg-amber-glow/15 torch-glow" />
+          <div
+            className="w-6 h-6 rounded-full torch-glow"
+            style={{ background: "rgba(45, 212, 191, 0.2)" }}
+          />
         </div>
 
         {/* Walking ants in tunnel */}

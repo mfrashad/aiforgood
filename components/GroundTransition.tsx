@@ -6,7 +6,7 @@ export default function GroundTransition() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, #4A6B18 0%, #3D5A14 8%, #5C3A1E 25%, #3D2817 50%, #2A1A10 75%, #1A0F0A 100%)",
+            "linear-gradient(180deg, #8B7355 0%, #5C3A1E 15%, #3D2817 40%, #2A1A10 70%, #1A0F0A 100%)",
         }}
       />
 
@@ -17,26 +17,6 @@ export default function GroundTransition() {
         preserveAspectRatio="none"
         style={{ shapeRendering: "crispEdges" }}
       >
-        {/* Grass tufts at top */}
-        {Array.from({ length: 60 }).map((_, i) => (
-          <rect
-            key={`grass-${i}`}
-            x={i * 14 - 2}
-            y={0}
-            width={4}
-            height={6 + (i % 4) * 3}
-            fill={i % 2 === 0 ? "#6B8E23" : "#5A7A1E"}
-            opacity={0.7}
-          />
-        ))}
-
-        {/* Root lines */}
-        <line x1="200" y1="20" x2="210" y2="60" stroke="#4A6B18" strokeWidth="2" opacity="0.4" />
-        <line x1="210" y1="60" x2="200" y2="90" stroke="#4A6B18" strokeWidth="1.5" opacity="0.3" />
-        <line x1="450" y1="15" x2="440" y2="55" stroke="#4A6B18" strokeWidth="2" opacity="0.4" />
-        <line x1="440" y1="55" x2="450" y2="80" stroke="#4A6B18" strokeWidth="1" opacity="0.3" />
-        <line x1="650" y1="18" x2="660" y2="50" stroke="#4A6B18" strokeWidth="1.5" opacity="0.35" />
-
         {/* Rocks / pebbles */}
         <rect x="100" y="70" width="12" height="8" rx="2" fill="#5C3A1E" opacity="0.5" />
         <rect x="300" y="90" width="16" height="10" rx="3" fill="#4A2E15" opacity="0.5" />

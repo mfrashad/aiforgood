@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function CommunityRoom() {
   return (
     <section id="community" className="py-16 px-4 sm:px-6">
@@ -27,31 +29,27 @@ export default function CommunityRoom() {
                 <rect x="12" y="20" width="4" height="2" fill="#F5E6D3" />
               </svg>
               <div>
-                <h2 className="font-[family-name:var(--font-pixel)] text-sm sm:text-base text-amber-glow">
+                <h2 className="font-[family-name:var(--font-pixel)] text-lg sm:text-2xl text-amber-glow">
                   Community
                 </h2>
-                <span className="font-[family-name:var(--font-pixel)] text-[7px] text-amber-glow/70 bg-amber-glow/10 px-2 py-0.5 inline-block mt-1">
+                <span className="font-[family-name:var(--font-pixel)] text-[9px] text-amber-glow/70 bg-amber-glow/10 px-2 py-0.5 inline-block mt-1">
                   COMING SOON
                 </span>
               </div>
             </div>
 
-            {/* Room decoration — pixel desks and whiteboards */}
-            <div className="flex gap-4 mb-6 overflow-hidden">
-              {/* Mini pixel desk */}
-              {[1, 2, 3].map((d) => (
-                <div key={d} className="hidden sm:block" style={{ opacity: 0.5 }}>
-                  <svg width="40" height="30" viewBox="0 0 40 30" className="pixel-render" style={{ shapeRendering: "crispEdges" }}>
-                    <rect x="4" y="14" width="32" height="3" fill="#8B6914" />
-                    <rect x="8" y="17" width="3" height="13" fill="#6B4F10" />
-                    <rect x="28" y="17" width="3" height="13" fill="#6B4F10" />
-                    <rect x="12" y="8" width="16" height="6" fill="#4CAF50" opacity="0.4" />
-                  </svg>
-                </div>
-              ))}
+            {/* Room illustration */}
+            <div className="flex justify-center mb-6">
+              <Image
+                src="/sprites/community-room.png"
+                alt="Ant workshop community room"
+                width={700}
+                height={394}
+                className="pixel-render rounded max-w-full"
+              />
             </div>
 
-            <p className="font-[family-name:var(--font-silk)] text-sm text-text-warm leading-relaxed mb-4">
+            <p className="text-base sm:text-lg text-text-warm leading-relaxed mb-4">
               Biweekly sessions connecting builders to NGOs and social impact
               orgs. Part workshop, part co-working, part open hangout. We form
               teams, match real needs to builders, and ship projects that matter.
@@ -59,7 +57,7 @@ export default function CommunityRoom() {
 
             <a
               href="#join"
-              className="inline-block font-[family-name:var(--font-pixel)] text-[9px] text-brand-green hover:text-brand-green/80 transition-colors"
+              className="inline-block font-[family-name:var(--font-pixel)] text-xs sm:text-sm text-brand-green hover:text-brand-green/80 transition-colors"
             >
               Join as Volunteer Committee →
             </a>

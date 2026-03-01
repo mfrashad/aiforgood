@@ -29,7 +29,7 @@ export default function Footer() {
                 AI for Good
               </span>
             </div>
-            <p className="font-[family-name:var(--font-silk)] text-xs text-text-dim leading-relaxed max-w-sm">
+            <p className="text-xs text-text-dim leading-relaxed max-w-sm">
               Open-source AI projects, community, and advocacy for social impact
               in Southeast Asia and beyond. Built by the community, for the
               community.
@@ -44,19 +44,19 @@ export default function Footer() {
             <div className="flex flex-col gap-2">
               <a
                 href="#community"
-                className="font-[family-name:var(--font-silk)] text-sm text-text-dim hover:text-text-warm transition-colors"
+                className="text-sm text-text-dim hover:text-text-warm transition-colors"
               >
                 Community
               </a>
               <a
                 href="#advocacy"
-                className="font-[family-name:var(--font-silk)] text-sm text-text-dim hover:text-text-warm transition-colors"
+                className="text-sm text-text-dim hover:text-text-warm transition-colors"
               >
                 Advocacy
               </a>
               <a
                 href="#projects"
-                className="font-[family-name:var(--font-silk)] text-sm text-text-dim hover:text-text-warm transition-colors"
+                className="text-sm text-text-dim hover:text-text-warm transition-colors"
               >
                 Projects
               </a>
@@ -73,7 +73,7 @@ export default function Footer() {
                 href={SITE.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-[family-name:var(--font-silk)] text-sm text-text-dim hover:text-text-warm transition-colors"
+                className="text-sm text-text-dim hover:text-text-warm transition-colors"
               >
                 GitHub
               </a>
@@ -81,7 +81,7 @@ export default function Footer() {
                 href={SITE.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-[family-name:var(--font-silk)] text-sm text-text-dim hover:text-text-warm transition-colors"
+                className="text-sm text-text-dim hover:text-text-warm transition-colors"
               >
                 X / Twitter
               </a>
@@ -89,13 +89,13 @@ export default function Footer() {
                 href={SITE.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-[family-name:var(--font-silk)] text-sm text-text-dim hover:text-text-warm transition-colors"
+                className="text-sm text-text-dim hover:text-text-warm transition-colors"
               >
                 TikTok
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="font-[family-name:var(--font-silk)] text-sm text-text-dim hover:text-text-warm transition-colors"
+                className="text-sm text-text-dim hover:text-text-warm transition-colors"
               >
                 Email
               </a>
@@ -105,10 +105,10 @@ export default function Footer() {
 
         {/* Bottom bar — stone tablet style */}
         <div className="border-t-2 border-earth-brown pt-6 flex flex-wrap justify-between items-center gap-4">
-          <p className="font-[family-name:var(--font-silk)] text-[10px] text-text-dim">
+          <p className="text-[10px] text-text-dim">
             &copy; 2026 AI for Good Malaysia. Open source under MIT License.
           </p>
-          <p className="font-[family-name:var(--font-silk)] text-[10px] text-text-dim">
+          <p className="text-[10px] text-text-dim">
             A community initiative from Southeast Asia.
           </p>
         </div>

@@ -82,14 +82,56 @@ export const CONTENT_TYPES = [
 
 export const VISION = {
   problem: [
-    "Open-source social impact projects already exist: pasarmalam.app, sedekah.je, wikiimpact. Each built by one person, grown by contributors. They prove the model works, but they stay isolated. No shared infrastructure, no way to build on each other's work.",
-    "Meanwhile, social impact orgs rarely show up in AI builder communities. The people who need AI most aren't in the room where it's being built.",
+    "Tech optimizes for profit. Ideas without a revenue model get shut down — no matter how much good they could do.",
+    "Some of the world's most pressing problems simply can't be solved profitably. Without deliberate intervention, they stay unsolved.",
   ],
   vision: [
-    "An open platform connecting builders to social impact orgs. Each shipped project feeds reusable components back into a shared library: datasets, APIs, templates. sedekah.je already solved donation directories. pasarmalam.app already solved night market mapping. The next builder should inherit that, not rebuild it.",
-    "One builder helped Pocket of Pink, a youth education nonprofit, ship their website in a single day using AI. That's the ratio now. This infrastructure makes it repeatable.",
+    {
+      title: "Fund What the Market Won't",
+      text: "We support social good projects the market ignores. Some of the most important work gets left behind. We exist to make sure it doesn't.",
+    },
+    {
+      title: "AI Makes Volunteering Possible",
+      text: "AI turned software into a commodity. A student can now build what used to take a team. We teach NGOs to use AI and connect them with builders.",
+    },
+    {
+      title: "Open Source, Shared Progress",
+      text: "AI was built by all of us — it should benefit all of us. Every project feeds into shared APIs, datasets, and templates. The next builder inherits, not rebuilds.",
+    },
   ],
 };
+
+export const COMMUNITY_PROJECTS = [
+  {
+    name: "MyMP",
+    url: "https://mymp.org.my",
+    description: "Track Malaysian Members of Parliament — voting records, attendance, and more.",
+  },
+  {
+    name: "Sedekah.je",
+    url: "https://sedekah.je",
+    description: "Open-source donation directory connecting donors to verified causes across Malaysia.",
+  },
+  {
+    name: "Lepak Masjid",
+    url: "https://lepakmasjid.app",
+    description: "Find mosques, prayer times, and community events near you.",
+  },
+  {
+    name: "Pasar Malam",
+    url: "https://pasarmalam.app",
+    description: "Night market directory mapping locations and schedules across Malaysia.",
+  },
+];
+
+export const HELPED_NGOS = [
+  {
+    name: "Pocket of Pink",
+    url: "https://www.pocketofpink.com",
+    description: "Youth education nonprofit — we helped ship their website in a single day using AI.",
+    badge: "NGO WE HELPED",
+  },
+];
 
 export const TALKS_DESCRIPTION =
   "20+ speaking engagements at meetups, conferences, and government briefings including Malaysia's Foreign Affairs Ministry (IDFR) and Yayasan Peneraju. Featured on Bernama TV, RTM TV1, Era.fm, and Kosmo.";

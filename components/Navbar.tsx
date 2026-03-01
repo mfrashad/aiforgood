@@ -27,7 +27,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="font-[family-name:var(--font-silk)] text-sm text-text-dim hover:text-text-warm transition-colors"
+              className="text-sm text-text-dim hover:text-text-warm transition-colors"
             >
               {link.label}
             </a>
@@ -68,7 +68,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block font-[family-name:var(--font-silk)] text-sm text-text-dim hover:text-text-warm"
+              className="block text-sm text-text-dim hover:text-text-warm"
             >
               {link.label}
             </a>
