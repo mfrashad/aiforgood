@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-earth-deep: #1A0F0A;
+  --color-earth-brown: #3D2817;
+  --color-earth-mid: #5C3A1E;
+  --color-earth-light: #8B6914;
+  --color-amber-glow: #DAA520;
+  --color-warm-green: #6B8E23;
+  --color-ant-body: #8B5E3C;
+  --color-sunset: #FF9E6D;
+  --color-sunset-pink: #FF7B9C;
+  --color-text-warm: #F5E6D3;
+  --color-text-dim: #C4A882;
+  --color-brand-green: #4CAF50;
+  --color-sky-warm: #FFD4A8;
+  --color-sky-top: #FF8C5A;
+
+  --font-pixel: "Press Start 2P", monospace;
+  --font-silk: "Silkscreen", monospace;
+}
+
+/* Pixelated rendering for pixel art elements */
+.pixel-render {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Pixel border utility */
+.pixel-border {
+  box-shadow:
+    /* outer border */
+    0 -4px 0 0 #3D2817,
+    0 4px 0 0 #3D2817,
+    -4px 0 0 0 #3D2817,
+    4px 0 0 0 #3D2817,
+    /* corners */
+    -4px -4px 0 0 #3D2817,
+    4px -4px 0 0 #3D2817,
+    -4px 4px 0 0 #3D2817,
+    4px 4px 0 0 #3D2817;
+}
+
+.pixel-border-light {
+  box-shadow:
+    0 -2px 0 0 #8B5E3C,
+    0 2px 0 0 #8B5E3C,
+    -2px 0 0 0 #8B5E3C,
+    2px 0 0 0 #8B5E3C;
+}
+
+/* ---- ANT SPRITE ANIMATION ---- */
+
+/* Pure CSS pixel ant */
+.pixel-ant {
+  width: 32px;
+  height: 24px;
+  position: relative;
+}
+
+/* Ant walk cycle */
+@keyframes ant-walk-right {
+  from { transform: translateX(-80px) scaleX(1); }
+  to { transform: translateX(calc(100vw + 80px)) scaleX(1); }
+}
+
+@keyframes ant-walk-left {
+  from { transform: translateX(calc(100vw + 80px)) scaleX(-1); }
+  to { transform: translateX(-80px) scaleX(-1); }
+}
+
+@keyframes ant-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes ant-legs {
+  0% { transform: rotate(-15deg); }
+  50% { transform: rotate(15deg); }
+  100% { transform: rotate(-15deg); }
+}
+
+@keyframes ant-wave {
+  0% { transform: translateY(0) rotate(0); }
+  20% { transform: translateY(-8px) rotate(-5deg); }
+  40% { transform: translateY(-4px) rotate(5deg); }
+  60% { transform: translateY(-8px) rotate(-3deg); }
+  80% { transform: translateY(-2px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+
+@keyframes antenna-wiggle {
+  0%, 100% { transform: rotate(-20deg); }
+  25% { transform: rotate(-35deg); }
+  75% { transform: rotate(-5deg); }
+}
+
+.ant-walking {
+  animation: ant-bob 0.4s ease-in-out infinite;
+}
+
+.ant-walking.paused {
+  animation: ant-wave 1s ease-in-out forwards;
+}
+
+/* ---- TORCH GLOW ---- */
+@keyframes torch-flicker {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  25% { opacity: 1; transform: scale(1.05); }
+  50% { opacity: 0.9; transform: scale(0.98); }
+  75% { opacity: 1; transform: scale(1.02); }
+}
+
+.torch-glow {
+  animation: torch-flicker 2s ease-in-out infinite;
+  filter: blur(20px);
+}
+
+/* ---- SCROLL INDICATOR ---- */
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.scroll-indicator {
+  animation: bounce-down 1.5s ease-in-out infinite;
+}
+
+/* ---- PARALLAX LAYERS ---- */
+.parallax-container {
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ---- UNDERGROUND TUNNEL ---- */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+.tunnel-bg {
+  background: repeating-linear-gradient(
+    180deg,
+    #1A0F0A 0px,
+    #2A1A10 4px,
+    #1A0F0A 8px
+  );
+}
+
+/* Soil texture pattern */
+.soil-texture {
+  background-image:
+    radial-gradient(circle at 20% 30%, #5C3A1E 1px, transparent 1px),
+    radial-gradient(circle at 60% 70%, #4A2E15 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, #5C3A1E 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, #4A2E15 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Room frame */
+.room-frame {
+  border: 4px solid #5C3A1E;
+  box-shadow:
+    inset 0 0 0 4px #3D2817,
+    inset 0 0 40px rgba(218, 165, 32, 0.1),
+    0 0 30px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+/* Wooden sign */
+.wooden-sign {
+  background: linear-gradient(180deg, #8B6914 0%, #6B4F10 50%, #5C3A1E 100%);
+  border: 3px solid #3D2817;
+  box-shadow:
+    inset 0 2px 0 rgba(218, 165, 32, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- STALACTITES ---- */
+.stalactite {
+  background: linear-gradient(180deg, #3D2817 0%, #1A0F0A 100%);
+  clip-path: polygon(30% 0%, 70% 0%, 55% 100%, 45% 100%);
+}
+
+/* ---- PIXEL BUTTON ---- */
+.pixel-btn {
+  background: #4CAF50;
+  color: #1A0F0A;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  padding: 12px 24px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow:
+    0 4px 0 0 #2E7D32,
+    0 -2px 0 0 #66BB6A inset;
+}
+
+.pixel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 0 0 #2E7D32,
+    0 -2px 0 0 #66BB6A inset;
+}
+
+.pixel-btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 2px 0 0 #2E7D32,
+    0 -2px 0 0 #66BB6A inset;
+}
+
+/* ---- CINEMA SEATS ---- */
+@keyframes popcorn-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .pixel-btn {
+    font-size: 0.6rem;
+    padding: 10px 18px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #1A0F0A;
+  color: #F5E6D3;
+}
