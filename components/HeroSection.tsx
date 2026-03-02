@@ -42,9 +42,8 @@ export default function HeroSection() {
           Building AI for Social Impact in Southeast Asia
         </p>
         <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
-          AI is humanity&apos;s biggest invention — but it only rewards profit. We
-          incentivize social impact, enable NGOs with AI, and keep everything
-          open source so the benefits reach everyone.
+          A community of AI builders shipping open-source tools, helping NGOs,
+          and using AI for social good.
         </p>
 
         {/* CTA buttons */}
