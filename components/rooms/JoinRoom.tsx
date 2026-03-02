@@ -1,123 +1,83 @@
-"use client";
-
-import { useState } from "react";
-import Image from "next/image";
 import { ROLES, SITE } from "@/lib/constants";
 
-const ANT_IMAGES = [
-  "/sprites/ant-builder.png",
-  "/sprites/ant-advocate.png",
-  "/sprites/ant-organizer.png",
-];
+const ROLE_ICONS: Record<string, React.ReactNode> = {
+  builder: (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-sky">
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+    </svg>
+  ),
+  advocate: (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-clay">
+      <path d="M12 6V2H8" />
+      <path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z" />
+      <path d="M2 12h2" />
+      <path d="M9 11v2" />
+      <path d="M15 11v2" />
+      <path d="M12 15v2" />
+    </svg>
+  ),
+  organizer: (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-olive">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18" />
+      <path d="M9 21V9" />
+    </svg>
+  ),
+};
 
-export default function JoinRoom() {
-  const [activeRole, setActiveRole] = useState<number | null>(null);
-
+export default function JoinSection() {
   return (
-    <section id="join" className="py-16 px-4 sm:px-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Room frame */}
-        <div className="room-frame bg-earth-brown/40 p-6 sm:p-10 relative overflow-hidden">
-          {/* Torch glows */}
-          <div className="absolute -left-4 top-1/3 w-20 h-20 rounded-full bg-amber-glow/25 torch-glow" />
-          <div className="absolute -right-4 top-1/3 w-20 h-20 rounded-full bg-amber-glow/25 torch-glow" style={{ animationDelay: "0.5s" }} />
+    <section id="join" className="section-padding">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="heading-section text-text-primary mb-4">
+          Join the Movement
+        </h2>
+        <p className="text-lg text-text-secondary mb-14 max-w-lg mx-auto">
+          We&apos;re looking for builders, designers, writers, and anyone who
+          wants to use their skills for social good.
+        </p>
 
-          <div className="relative z-10">
-            {/* Header */}
-            <h2 className="font-[family-name:var(--font-pixel)] text-lg sm:text-2xl text-amber-glow text-center mb-3">
-              Join the Movement
-            </h2>
-            <p className="text-base sm:text-lg text-text-dim text-center mb-10 max-w-lg mx-auto">
-              We&apos;re looking for builders, designers, writers, and anyone who
-              wants to use their skills for social good.
-            </p>
-
-            {/* Three ant characters on pedestals */}
-            <div className="grid sm:grid-cols-3 gap-6 mb-10">
-              {ROLES.map((role, i) => {
-                return (
-                  <div key={role.id} className="text-center relative">
-                    {/* Speech bubble (shown on click) */}
-                    {activeRole === i && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 -translate-y-full bg-text-warm text-earth-deep p-3 max-w-[200px] z-20 border-2 border-earth-brown">
-                        <p className="text-[11px] leading-relaxed">
-                          {role.description}
-                        </p>
-                        {/* Speech bubble tail */}
-                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full">
-                          <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[8px] border-transparent border-t-text-warm" />
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Ant on pedestal */}
-                    <button
-                      onClick={() =>
-                        setActiveRole(activeRole === i ? null : i)
-                      }
-                      className="mx-auto mb-3 cursor-pointer hover:scale-105 transition-transform focus:outline-none relative"
-                    >
-                      {/* Glow backdrop for contrast */}
-                      <div className="absolute inset-0 bg-amber-glow/10 rounded-full blur-xl" />
-                      <div className="relative w-[128px] h-[128px] flex items-end justify-center">
-                        <Image
-                          src={ANT_IMAGES[i]}
-                          alt={role.title}
-                          width={128}
-                          height={128}
-                          className="pixel-render object-contain max-h-[128px] w-auto"
-                        />
-                      </div>
-                    </button>
-
-                    {/* Pedestal */}
-                    <div className="mx-auto w-20 h-4 bg-earth-mid rounded-t" />
-                    <div className="mx-auto w-24 h-3 bg-earth-brown" />
-
-                    <h4 className="font-[family-name:var(--font-pixel)] text-[11px] sm:text-xs text-text-warm mt-3">
-                      {role.title}
-                    </h4>
-                    <p className="text-xs text-text-dim mt-1 sm:hidden">
-                      {role.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Notice board with CTA */}
-            <div className="bg-earth-deep/50 border-2 border-earth-mid/40 p-6 text-center max-w-md mx-auto">
-              {/* Notice board nails */}
-              <div className="flex justify-between mb-4">
-                <div className="w-3 h-3 rounded-full bg-earth-mid" />
-                <div className="w-3 h-3 rounded-full bg-earth-mid" />
+        {/* Role cards */}
+        <div className="grid sm:grid-cols-3 gap-5 mb-14">
+          {ROLES.map((role) => (
+            <div key={role.id} className="card p-6 text-center">
+              <div className="w-16 h-16 rounded-2xl bg-surface flex items-center justify-center mx-auto mb-4">
+                {ROLE_ICONS[role.id]}
               </div>
-
-              <a
-                href={SITE.volunteerForm}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pixel-btn text-[10px]! inline-block mb-4"
+              <h4
+                className="text-lg text-text-primary mb-2"
+                style={{ fontFamily: "var(--font-serif)", fontWeight: 600 }}
               >
-                Volunteer / Join Committee →
-              </a>
-
-              {/* Mailbox */}
-              <div className="flex items-center justify-center gap-2 mt-3">
-                <svg width="16" height="16" viewBox="0 0 16 16" className="pixel-render" style={{ shapeRendering: "crispEdges" }}>
-                  <rect x="1" y="4" width="14" height="10" fill="#8B6914" />
-                  <rect x="3" y="6" width="10" height="6" fill="#6B4F10" />
-                  <rect x="1" y="4" width="7" height="5" fill="#A0734A" />
-                  <rect x="8" y="4" width="7" height="5" fill="#A0734A" />
-                </svg>
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="text-xs sm:text-sm text-brand-green hover:text-brand-green/80"
-                >
-                  {SITE.email}
-                </a>
-              </div>
+                {role.title}
+              </h4>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                {role.description}
+              </p>
             </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="card-flat p-8 max-w-md mx-auto">
+          <a
+            href={SITE.volunteerForm}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-pill btn-pill-clay text-base px-8 py-3 mb-5 inline-block"
+          >
+            Volunteer / Join Committee &rarr;
+          </a>
+          <div className="flex items-center justify-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-text-tertiary">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            <a
+              href={`mailto:${SITE.email}`}
+              className="text-sm text-clay hover:text-clay-hover transition-colors"
+            >
+              Contact us
+            </a>
           </div>
         </div>
       </div>

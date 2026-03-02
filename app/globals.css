@@ -1,178 +1,120 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --color-earth-deep: #1A0F0A;
-  --color-earth-brown: #3D2817;
-  --color-earth-mid: #5C3A1E;
-  --color-earth-light: #8B6914;
-  --color-amber-glow: #DAA520;
-  --color-warm-green: #6B8E23;
-  --color-ant-body: #8B5E3C;
-  --color-sunset: #FF9E6D;
-  --color-sunset-pink: #FF7B9C;
-  --color-text-warm: #F5E6D3;
-  --color-text-dim: #C4A882;
-  --color-brand-green: #4CAF50;
-  --color-sky-warm: #FFD4A8;
-  --color-sky-top: #FF8C5A;
+  /* Warm grays */
+  --color-bg: #141413;
+  --color-surface: #1F1E1D;
+  --color-surface-raised: #30302E;
+  --color-text-primary: #FAF9F5;
+  --color-text-secondary: #87867F;
+  --color-text-tertiary: #5C5B56;
+  --color-border: #30302E;
+  --color-border-subtle: #242422;
 
-  --font-pixel: "Press Start 2P", monospace;
-  --font-silk: "Silkscreen", monospace;
+  /* Brand */
+  --color-clay: #D97757;
+  --color-clay-hover: #C96442;
+
+  /* Accents */
+  --color-olive: #788C5D;
+  --color-cactus: #BCD1CA;
+  --color-sky: #6A9BCC;
+  --color-fig: #C46686;
+
+  /* Font families */
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
-/* Pixelated rendering for pixel art elements */
-.pixel-render {
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
+/* ---- BASE ---- */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Dithering mask utilities */
-.dither-fade-down {
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black);
-  mask-image: linear-gradient(to bottom, transparent, black);
+body {
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
 }
 
-/* Cloud drift animations */
-@keyframes cloud-drift-slow {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(40px); }
-  100% { transform: translateX(0); }
+/* ---- PILL BUTTONS ---- */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-@keyframes cloud-drift-med {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-30px); }
-  100% { transform: translateX(0); }
+.btn-pill-filled {
+  background: var(--color-text-primary);
+  color: var(--color-bg);
 }
 
-@keyframes cloud-drift-fast {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(25px); }
-  100% { transform: translateX(0); }
+.btn-pill-filled:hover {
+  background: #E8E7E3;
 }
 
-.cloud-drift-1 { animation: cloud-drift-slow 30s ease-in-out infinite; }
-.cloud-drift-2 { animation: cloud-drift-med 24s ease-in-out infinite; }
-.cloud-drift-3 { animation: cloud-drift-fast 20s ease-in-out infinite; }
-
-/* Pixel border utility */
-.pixel-border {
-  box-shadow:
-    /* outer border */
-    0 -4px 0 0 #3D2817,
-    0 4px 0 0 #3D2817,
-    -4px 0 0 0 #3D2817,
-    4px 0 0 0 #3D2817,
-    /* corners */
-    -4px -4px 0 0 #3D2817,
-    4px -4px 0 0 #3D2817,
-    -4px 4px 0 0 #3D2817,
-    4px 4px 0 0 #3D2817;
+.btn-pill-outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-text-secondary);
 }
 
-.pixel-border-light {
-  box-shadow:
-    0 -2px 0 0 #8B5E3C,
-    0 2px 0 0 #8B5E3C,
-    -2px 0 0 0 #8B5E3C,
-    2px 0 0 0 #8B5E3C;
+.btn-pill-outline:hover {
+  border-color: var(--color-text-primary);
 }
 
-/* ---- ANT SPRITE ANIMATION ---- */
-
-/* Pure CSS pixel ant */
-.pixel-ant {
-  width: 32px;
-  height: 24px;
-  position: relative;
+.btn-pill-clay {
+  background: var(--color-clay);
+  color: #fff;
 }
 
-/* Ant walk cycle */
-@keyframes ant-walk-right {
-  from { transform: translateX(-80px) scaleX(1); }
-  to { transform: translateX(calc(100vw + 80px)) scaleX(1); }
+.btn-pill-clay:hover {
+  background: var(--color-clay-hover);
 }
 
-@keyframes ant-walk-left {
-  from { transform: translateX(calc(100vw + 80px)) scaleX(-1); }
-  to { transform: translateX(-80px) scaleX(-1); }
+/* ---- CARD STYLES ---- */
+.card {
+  background: var(--color-surface-raised);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-@keyframes ant-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes ant-legs {
-  0% { transform: rotate(-15deg); }
-  50% { transform: rotate(15deg); }
-  100% { transform: rotate(-15deg); }
+.card-flat {
+  background: var(--color-surface-raised);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
-@keyframes ant-wave {
-  0% { transform: translateY(0) rotate(0); }
-  20% { transform: translateY(-8px) rotate(-5deg); }
-  40% { transform: translateY(-4px) rotate(5deg); }
-  60% { transform: translateY(-8px) rotate(-3deg); }
-  80% { transform: translateY(-2px) rotate(2deg); }
-  100% { transform: translateY(0) rotate(0); }
+/* ---- ACCENT STRIPS ---- */
+.accent-olive { border-top: 3px solid var(--color-olive); }
+.accent-clay { border-top: 3px solid var(--color-clay); }
+.accent-sky { border-top: 3px solid var(--color-sky); }
+.accent-fig { border-top: 3px solid var(--color-fig); }
+.accent-cactus { border-top: 3px solid var(--color-cactus); }
+
+/* ---- SECTION SPACING ---- */
+.section-padding {
+  padding: 6rem 1.5rem;
 }
 
-@keyframes antenna-wiggle {
-  0%, 100% { transform: rotate(-20deg); }
-  25% { transform: rotate(-35deg); }
-  75% { transform: rotate(-5deg); }
-}
-
-.ant-walking {
-  animation: ant-bob 0.4s ease-in-out infinite;
-}
-
-.ant-walking.paused {
-  animation: ant-wave 1s ease-in-out forwards;
-}
-
-.ant-walking.ant-paused {
-  animation-play-state: paused;
-}
-
-/* ---- TORCH GLOW ---- */
-@keyframes torch-flicker {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  25% { opacity: 1; transform: scale(1.05); }
-  50% { opacity: 0.9; transform: scale(0.98); }
-  75% { opacity: 1; transform: scale(1.02); }
-}
-
-.torch-glow {
-  animation: torch-flicker 2s ease-in-out infinite;
-  filter: blur(20px);
-}
-
-/* ---- PYRAMID TORCH FLAME ---- */
-.torch-flame {
-  animation: torch-flicker 1.5s ease-in-out infinite;
-  transform-origin: center bottom;
-}
-
-/* ---- DRAGGABLE ANT ---- */
-.ant-dragging .ant-walking {
-  animation: none !important;
-}
-
-@keyframes brick-pickup {
-  0% { opacity: 0; transform: scale(0.5); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes block-place {
-  0% { transform: scale(1.2); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-.brick-pickup {
-  animation: brick-pickup 0.3s ease-out forwards;
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 1rem;
+  }
 }
 
 /* ---- SCROLL INDICATOR ---- */
@@ -182,159 +124,7 @@
 }
 
 .scroll-indicator {
-  animation: bounce-down 1.5s ease-in-out infinite;
-}
-
-/* ---- PARALLAX LAYERS ---- */
-.parallax-container {
-  perspective: 1px;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-/* ---- UNDERGROUND TUNNEL ---- */
-
-/* Default underground theme */
-.underground-theme {
-  --color-earth-deep: #0D0A1A;
-  --color-earth-brown: #1A1030;
-  --color-earth-mid: #3D2B5C;
-  --color-earth-light: #6B5B8D;
-}
-
-/* Biome-specific color overrides */
-.biome-swamp {
-  --color-earth-deep: #0A1A0D;
-  --color-earth-brown: #152E15;
-  --color-earth-mid: #2D4A2A;
-  --color-earth-light: #4A6B3A;
-}
-
-.biome-crystal {
-  --color-earth-deep: #0D0A1A;
-  --color-earth-brown: #1A1030;
-  --color-earth-mid: #3D2B5C;
-  --color-earth-light: #6B5B8D;
-}
-
-.biome-mushroom {
-  --color-earth-deep: #0A1520;
-  --color-earth-brown: #0F2030;
-  --color-earth-mid: #1A3A4A;
-  --color-earth-light: #2D5A6B;
-}
-
-.biome-lake {
-  --color-earth-deep: #081018;
-  --color-earth-brown: #0D1A28;
-  --color-earth-mid: #1A3048;
-  --color-earth-light: #2A4A6B;
-}
-
-.biome-lava {
-  --color-earth-deep: #1A0A05;
-  --color-earth-brown: #2E1508;
-  --color-earth-mid: #5C2A10;
-  --color-earth-light: #8B4520;
-}
-
-.biome-dungeon {
-  --color-earth-deep: #12100A;
-  --color-earth-brown: #1E1A10;
-  --color-earth-mid: #3D3520;
-  --color-earth-light: #5C5030;
-}
-
-@keyframes subtle-pulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.5; }
-}
-
-.tunnel-bg {
-  background: repeating-linear-gradient(
-    180deg,
-    var(--color-earth-deep) 0px,
-    var(--color-earth-brown) 4px,
-    var(--color-earth-deep) 8px
-  );
-}
-
-/* Soil texture pattern */
-.soil-texture {
-  background-image:
-    radial-gradient(circle at 20% 30%, var(--color-earth-mid) 1px, transparent 1px),
-    radial-gradient(circle at 60% 70%, var(--color-earth-brown) 1px, transparent 1px),
-    radial-gradient(circle at 80% 20%, var(--color-earth-mid) 1px, transparent 1px),
-    radial-gradient(circle at 40% 80%, var(--color-earth-brown) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* Room frame */
-.room-frame {
-  border: 4px solid var(--color-earth-mid);
-  box-shadow:
-    inset 0 0 0 4px var(--color-earth-brown),
-    inset 0 0 40px rgba(45, 212, 191, 0.06),
-    0 0 30px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-}
-
-/* Wooden sign */
-.wooden-sign {
-  background: linear-gradient(180deg, var(--color-earth-mid) 0%, var(--color-earth-brown) 50%, var(--color-earth-deep) 100%);
-  border: 3px solid var(--color-earth-light);
-  box-shadow:
-    inset 0 2px 0 rgba(218, 165, 32, 0.3),
-    0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* ---- STALACTITES ---- */
-.stalactite {
-  background: linear-gradient(180deg, var(--color-earth-brown) 0%, var(--color-earth-deep) 100%);
-  clip-path: polygon(30% 0%, 70% 0%, 55% 100%, 45% 100%);
-}
-
-/* ---- PIXEL BUTTON ---- */
-.pixel-btn {
-  background: #4CAF50;
-  color: #1A0F0A;
-  font-family: var(--font-pixel);
-  font-size: 0.7rem;
-  padding: 12px 24px;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.1s;
-  box-shadow:
-    0 4px 0 0 #2E7D32,
-    0 -2px 0 0 #66BB6A inset;
-}
-
-.pixel-btn:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 6px 0 0 #2E7D32,
-    0 -2px 0 0 #66BB6A inset;
-}
-
-.pixel-btn:active {
-  transform: translateY(2px);
-  box-shadow:
-    0 2px 0 0 #2E7D32,
-    0 -2px 0 0 #66BB6A inset;
-}
-
-/* ---- CINEMA SEATS ---- */
-@keyframes popcorn-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-
-/* ---- RESPONSIVE ---- */
-@media (max-width: 768px) {
-  .pixel-btn {
-    font-size: 0.6rem;
-    padding: 10px 18px;
-  }
+  animation: bounce-down 2s ease-in-out infinite;
 }
 
 /* ---- INSTAGRAM DARK MODE ---- */
@@ -342,12 +132,30 @@
   color-scheme: dark;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* ---- RESPONSIVE TYPOGRAPHY ---- */
+.heading-display {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-body {
-  background: #1A0F0A;
-  color: #F5E6D3;
+.heading-section {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .heading-section {
+    font-size: 2.5rem;
+  }
+}
+
+/* ---- SUBTLE DIVIDER ---- */
+.divider {
+  height: 1px;
+  background: var(--color-border);
 }

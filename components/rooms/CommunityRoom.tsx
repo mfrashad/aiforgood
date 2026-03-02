@@ -1,55 +1,64 @@
+"use client";
+
+import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { motion, useAnimationControls } from "framer-motion";
+import { AI_COMMUNITIES } from "@/lib/constants";
 
-export default function CommunityRoom() {
+const CARD_WIDTH = 260;
+const GAP = 16;
+const SCROLL_SPEED = 0.5; // px per frame
+
+export default function CommunitySection() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const xRef = useRef(0);
+  const controls = useAnimationControls();
+
+  const totalWidth = AI_COMMUNITIES.length * (CARD_WIDTH + GAP) - GAP;
+
+  const animate = useCallback(() => {
+    if (isHovered || isDragging) return;
+
+    const containerWidth = carouselRef.current?.offsetWidth ?? 0;
+    const maxScroll = totalWidth - containerWidth;
+
+    xRef.current -= SCROLL_SPEED;
+    if (Math.abs(xRef.current) >= maxScroll) {
+      xRef.current = 0;
+    }
+
+    controls.set({ x: xRef.current });
+  }, [isHovered, isDragging, totalWidth, controls]);
+
+  useEffect(() => {
+    let rafId: number;
+
+    const tick = () => {
+      animate();
+      rafId = requestAnimationFrame(tick);
+    };
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [animate]);
+
   return (
-    <section id="community" className="py-16 px-4 sm:px-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Room frame */}
-        <div className="room-frame bg-earth-brown/40 p-6 sm:p-10 relative overflow-hidden">
-          {/* Torch glow left */}
-          <div className="absolute -left-4 top-1/4 w-16 h-16 rounded-full bg-amber-glow/30 torch-glow" />
-          {/* Torch glow right */}
-          <div className="absolute -right-4 top-1/3 w-16 h-16 rounded-full bg-amber-glow/30 torch-glow" style={{ animationDelay: "0.5s" }} />
+    <section id="community" className="section-padding">
+      <div className="max-w-5xl mx-auto">
+        <div className="md:flex md:items-center md:gap-16 mb-16">
+          {/* Text content */}
+          <div className="md:w-1/2 mb-10 md:mb-0">
+            <span className="text-xs font-medium text-text-secondary bg-surface-raised px-3 py-1 rounded-full inline-block mb-6">
+              COMING SOON
+            </span>
 
-          {/* Wooden supports */}
-          <div className="absolute top-0 left-6 w-3 h-full bg-earth-mid/50" />
-          <div className="absolute top-0 right-6 w-3 h-full bg-earth-mid/50" />
-          <div className="absolute top-4 left-0 w-full h-3 bg-earth-mid/40" />
+            <h2 className="heading-section text-text-primary mb-6">
+              Community
+            </h2>
 
-          {/* Content */}
-          <div className="relative z-10">
-            {/* Header with badge */}
-            <div className="flex items-center gap-3 mb-6">
-              {/* Pixel workshop icon */}
-              <svg width="32" height="32" viewBox="0 0 32 32" className="pixel-render shrink-0" style={{ shapeRendering: "crispEdges" }}>
-                <rect x="4" y="4" width="24" height="24" rx="2" fill="#5C3A1E" />
-                <rect x="8" y="8" width="16" height="16" fill="#8B6914" />
-                <rect x="12" y="12" width="8" height="2" fill="#F5E6D3" />
-                <rect x="12" y="16" width="6" height="2" fill="#F5E6D3" />
-                <rect x="12" y="20" width="4" height="2" fill="#F5E6D3" />
-              </svg>
-              <div>
-                <h2 className="font-[family-name:var(--font-pixel)] text-lg sm:text-2xl text-amber-glow">
-                  Community
-                </h2>
-                <span className="font-[family-name:var(--font-pixel)] text-[9px] text-amber-glow/70 bg-amber-glow/10 px-2 py-0.5 inline-block mt-1">
-                  COMING SOON
-                </span>
-              </div>
-            </div>
-
-            {/* Room illustration */}
-            <div className="flex justify-center mb-6">
-              <Image
-                src="/sprites/community-room.png"
-                alt="Ant workshop community room"
-                width={700}
-                height={394}
-                className="pixel-render rounded max-w-full"
-              />
-            </div>
-
-            <p className="text-base sm:text-lg text-text-warm leading-relaxed mb-4">
+            <p className="text-lg text-text-secondary leading-relaxed mb-6">
               Biweekly sessions connecting builders to NGOs and social impact
               orgs. Part workshop, part co-working, part open hangout. We form
               teams, match real needs to builders, and ship projects that matter.
@@ -57,10 +66,90 @@ export default function CommunityRoom() {
 
             <a
               href="#join"
-              className="inline-block font-[family-name:var(--font-pixel)] text-xs sm:text-sm text-brand-green hover:text-brand-green/80 transition-colors"
+              className="text-base font-medium text-clay hover:text-clay-hover transition-colors"
             >
-              Join as Volunteer Committee →
+              Join as Volunteer Committee &rarr;
             </a>
+          </div>
+
+          {/* Visual block */}
+          <div className="md:w-1/2">
+            <div className="card-flat overflow-hidden min-h-[280px]">
+              <Image
+                src="/sprites/initiative-community.png"
+                alt="Community of builders collaborating"
+                width={800}
+                height={450}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* AI Communities Carousel */}
+        <div>
+          <h3
+            className="text-xl text-text-primary mb-6"
+            style={{ fontFamily: "var(--font-serif)", fontWeight: 600 }}
+          >
+            Explore Other AI Communities
+          </h3>
+          <div
+            ref={carouselRef}
+            className="overflow-hidden cursor-grab"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <motion.div
+              drag="x"
+              dragConstraints={carouselRef}
+              animate={controls}
+              onDragStart={() => setIsDragging(true)}
+              onDragEnd={(_, info) => {
+                setIsDragging(false);
+                xRef.current = info.point.x !== undefined ? xRef.current + info.offset.x : xRef.current;
+              }}
+              className="flex gap-4"
+              style={{ width: "max-content" }}
+            >
+              {AI_COMMUNITIES.map((community) => (
+                <a
+                  key={community.name}
+                  href={community.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-flat p-5 flex-shrink-0 hover:border-clay/30 transition-colors"
+                  style={{ width: CARD_WIDTH }}
+                  draggable={false}
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    {community.image ? (
+                      <Image
+                        src={community.image}
+                        alt={community.name}
+                        width={40}
+                        height={40}
+                        className="rounded-full object-cover"
+                        draggable={false}
+                      />
+                    ) : (
+                      <div className="w-10 h-10 rounded-full bg-olive/20 flex items-center justify-center text-olive font-semibold text-sm flex-shrink-0">
+                        {community.name.charAt(0)}
+                      </div>
+                    )}
+                    <h4
+                      className="text-sm text-text-primary font-medium leading-tight"
+                      style={{ fontFamily: "var(--font-serif)" }}
+                    >
+                      {community.name}
+                    </h4>
+                  </div>
+                  <p className="text-xs text-text-secondary leading-relaxed line-clamp-3">
+                    {community.description}
+                  </p>
+                </a>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>

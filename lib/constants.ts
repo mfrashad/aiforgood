@@ -3,7 +3,7 @@ export const SITE = {
   domain: "aiforgood.my",
   description:
     "Open-source AI projects, community, and advocacy for social impact in Southeast Asia and beyond.",
-  email: "rashad@aiforgood.my",
+  email: "m.fathyrashad@gmail.com",
   github: "https://github.com/mfrashad/aiforgood",
   twitter: "https://x.com/maboroshiiii",
   tiktok: "https://tiktok.com/@mfrashad",
@@ -11,16 +11,18 @@ export const SITE = {
 };
 
 export const STATS = [
-  { value: "20+", label: "Hackathons & Meetups" },
+  { value: "20+", label: "Builders" },
+  { value: "2", label: "NGOs Helped" },
+  { value: "1", label: "Projects" },
   { value: "5M+", label: "Content Views" },
-  { value: "1", label: "Open Source Projects" },
-  { value: "Growing", label: "Community" },
 ];
 
 export const NAV_LINKS = [
   { href: "#community", label: "Community" },
   { href: "#advocacy", label: "Advocacy" },
   { href: "#projects", label: "Projects" },
+  { href: "#vision", label: "Vision" },
+  { href: "#join", label: "Join" },
 ];
 
 export const ROLES = [
@@ -63,6 +65,7 @@ export const CONTENT_TYPES = [
     title: "Short-form Videos",
     description:
       "Making AI concepts accessible in 60 seconds. AI safety, open source, and tech for good explained for everyone.",
+    image: "/sprites/advocacy-videos.png",
   },
   {
     id: "articles",
@@ -70,6 +73,7 @@ export const CONTENT_TYPES = [
     title: "Articles & Guides",
     description:
       "Technical tutorials, AI safety guides, and thought pieces on responsible AI. Published in English and Bahasa Malaysia.",
+    image: "/sprites/advocacy-articles.png",
   },
   {
     id: "infographics",
@@ -77,6 +81,7 @@ export const CONTENT_TYPES = [
     title: "Infographics & Data",
     description:
       "Visual explainers on AI adoption, safety, and impact. Open data visualizations anyone can share and build on.",
+    image: "/sprites/advocacy-infographics.png",
   },
 ];
 
@@ -85,18 +90,22 @@ export const VISION = {
     "Tech optimizes for profit. Ideas without a revenue model get shut down — no matter how much good they could do.",
     "Some of the world's most pressing problems simply can't be solved profitably. Without deliberate intervention, they stay unsolved.",
   ],
+  problemImage: "/sprites/vision-problem.png",
   vision: [
     {
-      title: "Fund What the Market Won't",
+      title: "Support What the Market Won't",
       text: "We support social good projects the market ignores. Some of the most important work gets left behind. We exist to make sure it doesn't.",
+      image: "/sprites/vision-fund.png",
     },
     {
       title: "AI Makes Volunteering Possible",
       text: "AI turned software into a commodity. A student can now build what used to take a team. We teach NGOs to use AI and connect them with builders.",
+      image: "/sprites/vision-volunteer.png",
     },
     {
       title: "Open Source, Shared Progress",
       text: "AI was built by all of us — it should benefit all of us. Every project feeds into shared APIs, datasets, and templates. The next builder inherits, not rebuilds.",
+      image: "/sprites/vision-opensource.png",
     },
   ],
 };
@@ -130,6 +139,71 @@ export const HELPED_NGOS = [
     url: "https://www.pocketofpink.com",
     description: "Youth education nonprofit — we helped ship their website in a single day using AI.",
     badge: "NGO WE HELPED",
+  },
+];
+
+export const AI_COMMUNITIES = [
+  {
+    name: "Build Club",
+    description:
+      "AI learning community focused on building, with AI-native courses and certifications.",
+    url: "https://www.buildclub.ai/",
+    image: "/communities/build-club-logo-navbar.webp",
+  },
+  {
+    name: "Build with AI",
+    description:
+      "Project showcase for the Build With AI Malaysia community, featuring AI projects built by Malaysian builders.",
+    url: "https://buildwithai.my/",
+    image: "/communities/build_with_ai_logo.jpeg",
+  },
+  {
+    name: "AI Tinkerers",
+    description:
+      "Global community of AI engineers and researchers building real systems and sharing unfinished work.",
+    url: "https://kuala-lumpur.aitinkerers.org/",
+    image: "/communities/ai_tinkerers_logo.png",
+  },
+  {
+    name: "AI Hackerdorm",
+    description:
+      "Student-first community hosting regular builder sessions with project showcases and mentorship.",
+    url: "https://aihackerdorm.com/",
+    image: "/communities/ai_hackerdorm.webp",
+  },
+  {
+    name: "AI SEA",
+    description:
+      "Southeast Asia grassroots builder movement connecting local communities into a coalition.",
+    url: "https://www.aisea.builders/",
+    image: "/communities/aisea_logo.png",
+  },
+  {
+    name: "Rakan Tutor",
+    description:
+      "Free AI programs for ASEAN youth through hands-on workshops and a digital learning platform.",
+    url: "https://rakantutor.org/",
+    image: "/communities/rakan-tutor-logo.png",
+  },
+  {
+    name: "Cursor Malaysia",
+    description:
+      "The Cursor community for Malaysia, hosting hackathons, meetups, and workshops.",
+    url: "https://www.instagram.com/cursor.my/",
+    image: "/communities/cursor_my_logo.jpg",
+  },
+  {
+    name: "CoderPuffs",
+    description:
+      "A women-first initiative where we learn coding and AI while cafe-hopping together.",
+    url: "https://www.instagram.com/coderpuffs/",
+    image: "/communities/coderpuffs_logo.jpg",
+  },
+  {
+    name: "500 AI Residency",
+    description:
+      "An AI residency program focused on rapid building and shipping, bringing together builders to create and scale AI projects.",
+    url: "https://www.500.house/",
   },
 ];
 

@@ -2,20 +2,27 @@ import { STATS } from "@/lib/constants";
 
 export default function StatsBar() {
   return (
-    <section className="relative py-8 px-6">
-      {/* Wooden sign background */}
-      <div className="max-w-4xl mx-auto wooden-sign rounded px-6 py-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {STATS.map((stat) => (
-            <div key={stat.label}>
-              <div className="font-[family-name:var(--font-pixel)] text-xl sm:text-2xl text-amber-glow">
-                {stat.value}
+    <section className="py-12 px-6">
+      <div className="max-w-5xl mx-auto">
+        <div className="card-flat p-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {STATS.map((stat, i) => (
+              <div
+                key={stat.label}
+                className={`text-center ${i < STATS.length - 1 ? "md:border-r md:border-border" : ""}`}
+              >
+                <div
+                  className="text-3xl sm:text-4xl text-text-primary mb-1"
+                  style={{ fontFamily: "var(--font-serif)", fontWeight: 700 }}
+                >
+                  {stat.value}
+                </div>
+                <div className="text-sm text-text-secondary">
+                  {stat.label}
+                </div>
               </div>
-              <div className="text-xs sm:text-sm text-text-warm/70 mt-1">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
