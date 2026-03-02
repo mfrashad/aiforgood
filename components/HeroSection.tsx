@@ -39,11 +39,11 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-4 leading-relaxed">
-          Building AI for Social Impact in Southeast Asia
+          A community of AI builders using AI for social good
         </p>
         <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
-          A community of AI builders shipping open-source tools, helping NGOs,
-          and using AI for social good.
+          Shipping open-source tools, helping NGOs, and educating communities
+          in Southeast Asia and beyond.
         </p>
 
         {/* CTA buttons */}
