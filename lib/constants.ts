@@ -88,7 +88,7 @@ export const CONTENT_TYPES = [
 export const VISION = {
   problem: [
     "AI is arguably humanity's most transformative invention — yet the systems around it only reward profit. Some of the world's most pressing problems will stay unsolved if we only optimize for revenue.",
-    "Without deliberate intervention, AI will only solve problems for those who can pay — not the problems that matter most. The people who need it most — underserved communities, nonprofits, social enterprises — get left behind.",
+    "Without deliberate intervention, AI will only solve problems for the privileged few — not the problems that matter most. The people who need it most — underserved communities, nonprofits, social enterprises — get left behind.",
   ],
   problemImage: "/sprites/vision-problem.png",
   vision: [
