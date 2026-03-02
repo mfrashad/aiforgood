@@ -87,24 +87,24 @@ export const CONTENT_TYPES = [
 
 export const VISION = {
   problem: [
-    "Tech optimizes for profit. Ideas without a revenue model get shut down — no matter how much good they could do.",
-    "Some of the world's most pressing problems simply can't be solved profitably. Without deliberate intervention, they stay unsolved.",
+    "AI is arguably humanity's most transformative invention — yet the systems around it only reward profit. Products that can't generate revenue get killed, no matter how many lives they could improve.",
+    "Without deliberate intervention, AI will concentrate power and wealth in the hands of a few. The people who need it most — underserved communities, nonprofits, social enterprises — get left behind.",
   ],
   problemImage: "/sprites/vision-problem.png",
   vision: [
     {
-      title: "Support What the Market Won't",
-      text: "We support social good projects the market ignores. Some of the most important work gets left behind. We exist to make sure it doesn't.",
+      title: "Incentivize Impact, Not Just Profit",
+      text: "We fund, build, and champion projects that exist for social good — not shareholder returns. If the market won't support it, we will.",
       image: "/sprites/vision-fund.png",
     },
     {
-      title: "AI Makes Volunteering Possible",
-      text: "AI turned software into a commodity. A student can now build what used to take a team. We teach NGOs to use AI and connect them with builders.",
+      title: "Enable NGOs & Everyone to Benefit from AI",
+      text: "AI lets a single volunteer build what used to take a team. We educate people on AI, help NGOs build their own tech, and connect builders directly to organizations that need them.",
       image: "/sprites/vision-volunteer.png",
     },
     {
-      title: "Open Source, Shared Progress",
-      text: "AI was built by all of us — it should benefit all of us. Every project feeds into shared APIs, datasets, and templates. The next builder inherits, not rebuilds.",
+      title: "Open Source & Democratize AI",
+      text: "AI was trained on the collective knowledge of the internet — it should belong to everyone. We keep our work open source to democratize access, share data, and prevent the centralization of power.",
       image: "/sprites/vision-opensource.png",
     },
   ],

@@ -38,8 +38,12 @@ export default function HeroSection() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-4 leading-relaxed">
           Building AI for Social Impact in Southeast Asia
+        </p>
+        <p className="text-base text-text-tertiary max-w-xl mx-auto mb-10 leading-relaxed">
+          We connect builders to NGOs, ship open-source tools, and educate
+          communities — so AI benefits everyone, not just those who can pay for it.
         </p>
 
         {/* CTA buttons */}
