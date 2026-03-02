@@ -41,9 +41,10 @@ export default function HeroSection() {
         <p className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-4 leading-relaxed">
           Building AI for Social Impact in Southeast Asia
         </p>
-        <p className="text-base text-text-tertiary max-w-xl mx-auto mb-10 leading-relaxed">
-          We connect builders to NGOs, ship open-source tools, and educate
-          communities — so AI benefits everyone, not just those who can pay for it.
+        <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
+          AI is humanity&apos;s biggest invention — but it only rewards profit. We
+          incentivize social impact, enable NGOs with AI, and keep everything
+          open source so the benefits reach everyone.
         </p>
 
         {/* CTA buttons */}
