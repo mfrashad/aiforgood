@@ -17,10 +17,10 @@ export const STATS = [
 ];
 
 export const NAV_LINKS = [
-  { href: "#community", label: "Community" },
-  { href: "#advocacy", label: "Advocacy" },
-  { href: "#projects", label: "Projects" },
-  { href: "#vision", label: "Vision" },
+  { href: "/#community", label: "Community" },
+  { href: "/#advocacy", label: "Advocacy" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#vision", label: "Vision" },
   { href: "/volunteer", label: "Volunteer" },
 ];
 

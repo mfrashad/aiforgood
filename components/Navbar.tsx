@@ -10,7 +10,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-bg/80 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <span
             className="text-xl tracking-tight text-text-primary"
             style={{ fontFamily: "var(--font-serif)", fontWeight: 700 }}
