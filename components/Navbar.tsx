@@ -44,10 +44,10 @@ export default function Navbar() {
             Contact
           </a>
           <a
-            href="#join"
+            href="/volunteer"
             className="btn-pill btn-pill-filled text-sm py-2 px-5"
           >
-            Join Us
+            Volunteer
           </a>
         </div>
 
@@ -91,11 +91,11 @@ export default function Navbar() {
               Contact
             </a>
             <a
-              href="#join"
+              href="/volunteer"
               onClick={() => setMobileOpen(false)}
               className="btn-pill btn-pill-filled text-center"
             >
-              Join Us
+              Volunteer
             </a>
           </div>
         </div>

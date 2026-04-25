@@ -7,7 +7,6 @@ export const SITE = {
   github: "https://github.com/mfrashad/aiforgood",
   twitter: "https://x.com/maboroshiiii",
   tiktok: "https://tiktok.com/@mfrashad",
-  volunteerForm: "https://forms.gle/placeholder",
 };
 
 export const STATS = [
@@ -22,7 +21,7 @@ export const NAV_LINKS = [
   { href: "#advocacy", label: "Advocacy" },
   { href: "#projects", label: "Projects" },
   { href: "#vision", label: "Vision" },
-  { href: "#join", label: "Join" },
+  { href: "/volunteer", label: "Volunteer" },
 ];
 
 export const ROLES = [
@@ -44,7 +43,7 @@ export const ROLES = [
     id: "organizer",
     title: "Organizer",
     description:
-      "Help run meetups, connect with NGOs, coordinate build cycles.",
+      "Host meetups or run the day-to-day: Discord, events, posters, logistics.",
     emoji: "clipboard",
   },
 ];
@@ -209,3 +208,88 @@ export const AI_COMMUNITIES = [
 
 export const TALKS_DESCRIPTION =
   "20+ speaking engagements at meetups, conferences, and government briefings including Malaysia's Foreign Affairs Ministry (IDFR) and Yayasan Peneraju. Featured on Bernama TV, RTM TV1, Era.fm, and Kosmo.";
+
+export const ROLE_DETAILS = [
+  {
+    id: "builder",
+    title: "Builder",
+    tagline: "Build open-source AI tools for social impact and local community problems.",
+    commitment: "3–7 hrs / week",
+    accentClass: "accent-sky",
+    responsibilities: [
+      "Take full ownership as PIC (Person In Charge) of one project end-to-end — start a new one, or take over an existing one until it ships.",
+      "Projects tackle real problems: NGO needs, underserved communities, local causes in Southeast Asia — not random open source.",
+      "Open-source the work where possible and keep the community updated on your progress.",
+      "Scope, build, iterate, and hand off with documentation when done.",
+    ],
+    whoFits: [
+      "Experienced devs, vibe coders, AI-assisted builders, and curious beginners",
+      "Anyone willing to own a project end-to-end — we'll match your level to the right scope",
+      "People who want their work to reach real users with real needs",
+    ],
+  },
+  {
+    id: "advocate",
+    title: "Advocate",
+    tagline: "Be the voice of AI for Good.",
+    commitment: "~1 post / week",
+    accentClass: "accent-clay",
+    responsibilities: [
+      "Publish ~1 piece of content per week in any format: short-form video, blog post, tweet/thread, or infographic.",
+      "Topics: AI social-impact & safety awareness, OR marketing AI for Good's projects and events.",
+      "Claim content requests posted by builders when they need launch coverage or a specific topic covered.",
+      "Publish in English or Bahasa Malaysia.",
+    ],
+    whoFits: [
+      "Writers, video creators, graphic designers",
+      "Anyone with a platform or learning to build one",
+      "People who want to make AI topics accessible to everyone",
+    ],
+  },
+  {
+    id: "organizer",
+    title: "Organizer",
+    tagline: "Be the connective tissue — events, Discord, the day-to-day.",
+    commitment: "1+ event / month or online admin",
+    accentClass: "accent-olive",
+    responsibilities: [
+      "In-person: host or co-organize at least one meetup per month. Support PIC launch events, hackathons, and demo nights.",
+      "Online admin: manage Discord (moderation, welcomes), keep the event calendar updated, design event posters and social cards.",
+      "Connect with local AI communities, NGOs, and venues.",
+      "Pick one or both modes — let us know what fits your schedule.",
+    ],
+    whoFits: [
+      "Organized, reliable, and friendly people",
+      "Comfortable with chat-driven async work",
+      "Event planners, community managers, anyone who likes connecting people",
+    ],
+  },
+];
+
+export const VOLUNTEER_EXPECTATIONS = [
+  {
+    icon: "🎯",
+    title: "Passion for the Mission",
+    body: "You care about AI being used for social good — not shareholder returns. You come in with a mindset of giving, not for personal gain.",
+  },
+  {
+    icon: "🤲",
+    title: "Volunteerism",
+    body: "This role is unpaid. Past members have found it a fulfilling experience contributing to something larger than themselves.",
+  },
+  {
+    icon: "🛠️",
+    title: "Resourcefulness",
+    body: "We stay lean. Come with a \"make it work\" mentality — find creative solutions and be ready to get your hands dirty.",
+  },
+  {
+    icon: "📆",
+    title: "Commitment",
+    body: "We ask for 3–7 hrs/week, consistently. We're counting on you to deliver on time and stay engaged throughout your term.",
+  },
+  {
+    icon: "📱",
+    title: "Clear Communication",
+    body: "We operate remotely. Be responsive, proactive, and keep your team updated on your progress — no going dark.",
+  },
+];

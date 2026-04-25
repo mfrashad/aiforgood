@@ -65,7 +65,7 @@ export default function CommunitySection() {
             </p>
 
             <a
-              href="#join"
+              href="/volunteer"
               className="text-base font-medium text-clay hover:text-clay-hover transition-colors"
             >
               Join as Volunteer Committee &rarr;

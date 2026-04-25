@@ -1,4 +1,4 @@
-import { ROLES, SITE } from "@/lib/constants";
+import { ROLES } from "@/lib/constants";
 
 const ROLE_ICONS: Record<string, React.ReactNode> = {
   builder: (
@@ -60,12 +60,10 @@ export default function JoinSection() {
         {/* CTA */}
         <div className="card-flat p-8 max-w-md mx-auto">
           <a
-            href={SITE.volunteerForm}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/volunteer"
             className="btn-pill btn-pill-clay text-base px-8 py-3 mb-5 inline-block"
           >
-            Volunteer / Join Committee &rarr;
+            See full roles &amp; apply &rarr;
           </a>
           <div className="flex items-center justify-center gap-2">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-text-tertiary">
@@ -73,7 +71,7 @@ export default function JoinSection() {
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
             <a
-              href={`mailto:${SITE.email}`}
+              href="mailto:m.fathyrashad@gmail.com"
               className="text-sm text-clay hover:text-clay-hover transition-colors"
             >
               Contact us

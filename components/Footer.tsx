@@ -56,10 +56,10 @@ export default function Footer() {
                 Vision
               </a>
               <a
-                href="#join"
+                href="/volunteer"
                 className="text-sm text-text-secondary hover:text-text-primary transition-colors"
               >
-                Join
+                Volunteer
               </a>
             </div>
           </div>

@@ -48,7 +48,7 @@ export default function HeroSection() {
 
         {/* CTA buttons */}
         <div className="flex flex-wrap gap-4 justify-center">
-          <a href="#join" className="btn-pill btn-pill-clay text-base px-8 py-3">
+          <a href="/volunteer" className="btn-pill btn-pill-clay text-base px-8 py-3">
             Become a Volunteer
           </a>
           <a

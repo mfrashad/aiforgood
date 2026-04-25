@@ -9,7 +9,7 @@ const INITIATIVES = [
     image: "/sprites/initiative-community.png",
     description:
       "Biweekly sessions connecting builders to NGOs and social impact orgs. Part workshop, part co-working, part open hangout. We form teams, match real needs to builders, and ship projects that matter.",
-    cta: { label: "Join as Volunteer Committee", href: "#join" },
+    cta: { label: "Join as Volunteer Committee", href: "/volunteer" },
   },
   {
     id: "advocacy",
