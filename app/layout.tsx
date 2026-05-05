@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ConvexClientProvider } from "./ConvexClientProvider";
+import { PostHogProvider } from "./PostHogProvider";
 
 export const metadata: Metadata = {
   title: "AI for Good Malaysia",
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <ConvexClientProvider>{children}</ConvexClientProvider>
+        <PostHogProvider>
+          <ConvexClientProvider>{children}</ConvexClientProvider>
+        </PostHogProvider>
       </body>
     </html>
   );

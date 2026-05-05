@@ -38,10 +38,11 @@ export default function InitiativesSection() {
     <section className="section-padding">
       <div className="max-w-5xl mx-auto">
         <h2 className="heading-section text-text-primary text-center mb-3">
-          Our Initiatives
+          What we build
         </h2>
         <p className="text-lg text-text-secondary text-center mb-14 max-w-2xl mx-auto">
-          Three pillars of building AI for social good
+          Community, advocacy, and open-source projects — the three levers of
+          public-interest AI.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -59,7 +60,7 @@ export default function InitiativesSection() {
                 />
               </div>
               <div className="p-6 flex flex-col flex-1">
-              <span className="text-xs font-medium text-text-secondary bg-surface/60 px-3 py-1 rounded-full self-start mb-5">
+              <span className={`text-xs font-bold px-3 py-1 rounded-full self-start mb-5 border ${item.badge === "ACTIVE" ? "text-olive border-olive/40 bg-olive/10" : "text-text-tertiary border-border-subtle bg-surface"}`}>
                 {item.badge}
               </span>
 

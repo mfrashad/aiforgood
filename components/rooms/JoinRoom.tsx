@@ -23,6 +23,13 @@ const ROLE_ICONS: Record<string, React.ReactNode> = {
       <path d="M9 21V9" />
     </svg>
   ),
+  researcher: (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-fig">
+      <line x1="18" y1="20" x2="18" y2="10" />
+      <line x1="12" y1="20" x2="12" y2="4" />
+      <line x1="6" y1="20" x2="6" y2="14" />
+    </svg>
+  ),
 };
 
 export default function JoinSection() {
@@ -33,12 +40,12 @@ export default function JoinSection() {
           Join the Movement
         </h2>
         <p className="text-lg text-text-secondary mb-14 max-w-lg mx-auto">
-          We&apos;re looking for builders, designers, writers, and anyone who
-          wants to use their skills for social good.
+          We&apos;re looking for builders, advocates, organizers, and
+          researchers who want to use their skills for social good.
         </p>
 
         {/* Role cards */}
-        <div className="grid sm:grid-cols-3 gap-5 mb-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
           {ROLES.map((role) => (
             <div key={role.id} className="card p-6 text-center">
               <div className="w-16 h-16 rounded-2xl bg-surface flex items-center justify-center mx-auto mb-4">
@@ -63,7 +70,7 @@ export default function JoinSection() {
             href="/volunteer"
             className="btn-pill btn-pill-clay text-base px-8 py-3 mb-5 inline-block"
           >
-            See full roles &amp; apply &rarr;
+            See all roles &amp; apply &rarr;
           </a>
           <div className="flex items-center justify-center gap-2">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-text-tertiary">

@@ -10,18 +10,17 @@ export const SITE = {
 };
 
 export const STATS = [
-  { value: "20+", label: "Builders" },
-  { value: "2", label: "NGOs Helped" },
-  { value: "1", label: "Projects" },
+  { value: "20+", label: "Active Builders" },
+  { value: "2", label: "NGOs Served" },
+  { value: "16", label: "Countries Tracked" },
   { value: "5M+", label: "Content Views" },
 ];
 
 export const NAV_LINKS = [
+  { href: "/manifesto", label: "Manifesto" },
   { href: "/#community", label: "Community" },
   { href: "/#advocacy", label: "Advocacy" },
   { href: "/#projects", label: "Projects" },
-  { href: "/#vision", label: "Vision" },
-  { href: "/volunteer", label: "Volunteer" },
 ];
 
 export const ROLES = [
@@ -45,6 +44,13 @@ export const ROLES = [
     description:
       "Host meetups or run the day-to-day: Discord, events, posters, logistics.",
     emoji: "clipboard",
+  },
+  {
+    id: "researcher",
+    title: "Researcher",
+    description:
+      "Produce data and analysis on AI adoption, NGO digital readiness, and public-sector AI in SEA.",
+    emoji: "chart",
   },
 ];
 
@@ -262,6 +268,24 @@ export const ROLE_DETAILS = [
       "Organized, reliable, and friendly people",
       "Comfortable with chat-driven async work",
       "Event planners, community managers, anyone who likes connecting people",
+    ],
+  },
+  {
+    id: "researcher",
+    title: "Researcher",
+    tagline: "Produce the data and analysis that powers our advocacy.",
+    commitment: "3–5 hrs / week",
+    accentClass: "accent-fig",
+    responsibilities: [
+      "Collect, clean, and analyze data on AI adoption, NGO digital readiness, and public-sector AI procurement across Southeast Asia.",
+      "Produce reports, datasets, and visual summaries the community can publish and cite in advocacy and grant applications.",
+      "Conduct NGO digital-capacity audits — what tools they use, what they're missing, what AI could improve.",
+      "Contribute new datasets and improved methodology to our open data API on AI adoption across 16+ countries.",
+    ],
+    whoFits: [
+      "Grad students, policy researchers, data journalists, or anyone with quantitative skills",
+      "People interested in AI governance, global development, or public-sector technology",
+      "Writers who can turn raw numbers into readable, citable analysis",
     ],
   },
 ];

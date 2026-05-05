@@ -75,10 +75,17 @@ export default function VolunteerPage() {
       {/* ── Open roles ── */}
       <section className="section-padding pt-0">
         <div className="max-w-4xl mx-auto">
-          <h2 className="heading-section text-text-primary mb-3">Open positions</h2>
-          <p className="text-lg text-text-secondary mb-12">
-            Three ways to contribute — pick what fits your skills and schedule.
-          </p>
+          <h2 className="heading-section text-text-primary mb-6">Open positions</h2>
+
+          {/* Sub-headline */}
+          <div className="mb-12 pl-6 border-l-4 border-clay">
+            <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+              The most valuable thing you can give to public-interest AI right
+              now is not money. It is the skill the market is paying you
+              handsomely to use elsewhere. We need your nights, your weekends,
+              and — if you can spare it — a sabbatical.
+            </p>
+          </div>
 
           <div className="space-y-6">
             {ROLE_DETAILS.map((role) => (

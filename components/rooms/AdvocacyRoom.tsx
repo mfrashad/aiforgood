@@ -120,13 +120,13 @@ export default function AdvocacySection() {
               <span className="text-xs font-medium text-clay bg-clay/10 px-3 py-1 rounded-full inline-block mb-3">
                 {INSTAGRAM_VIDEO.title}
               </span>
-              <div className="card-flat overflow-hidden instagram-dark max-h-[420px]">
+              <div className="card-flat overflow-hidden max-h-[420px]">
                 <blockquote
                   className="instagram-media"
                   data-instgrm-permalink={`${INSTAGRAM_VIDEO.url}?utm_source=ig_embed&utm_campaign=loading`}
                   data-instgrm-version="14"
                   style={{
-                    background: "#1F1E1D",
+                    background: "#ffffff",
                     border: 0,
                     margin: 0,
                     maxWidth: "100%",

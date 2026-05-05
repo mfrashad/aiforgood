@@ -61,6 +61,24 @@ export default function Footer() {
               >
                 Volunteer
               </a>
+              <a
+                href="/partners"
+                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+              >
+                Partner with Us
+              </a>
+              <a
+                href="/funders"
+                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+              >
+                Support the Work
+              </a>
+              <a
+                href="/manifesto"
+                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+              >
+                Manifesto
+              </a>
             </div>
           </div>
 

@@ -185,7 +185,7 @@ const inputBase =
 
 function ErrMsg({ msg }: { msg?: string }) {
   if (!msg) return null;
-  return <p className="text-xs text-red-400 mt-1.5">{msg}</p>;
+  return <p className="text-xs text-red-600 mt-1.5">{msg}</p>;
 }
 
 function Label({ text, required }: { text: string; required?: boolean }) {
@@ -795,7 +795,7 @@ export default function VolunteerForm() {
 
       {serverError && (
         <div className="card-flat p-4 border border-red-500/30 rounded-xl">
-          <p className="text-sm text-red-400">{serverError}</p>
+          <p className="text-sm text-red-600">{serverError}</p>
         </div>
       )}
 
