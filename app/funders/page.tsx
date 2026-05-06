@@ -39,7 +39,7 @@ const WHY_US = [
   },
   {
     label: "Founder credibility.",
-    text: "AI for Good Malaysia is led by Cleve Mufti Athyrashad — speaker at Malaysia's Foreign Affairs Ministry and the IDFR Distinguished Lecture Series, featured on Bernama TV, RTM TV1, Era.fm, and Kosmo, MIT-collaborated AI researcher.",
+    text: "AI for Good Malaysia is led by Fathy Rashad — speaker at Malaysia's Foreign Affairs Ministry and the IDFR Distinguished Lecture Series, featured on Bernama TV, RTM TV1, Era.fm, and Kosmo, MIT-collaborated AI researcher.",
   },
   {
     label: "Regional position.",
@@ -232,7 +232,7 @@ export default function FundersPage() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="heading-section text-text-primary mb-4">Get in touch</h2>
           <p className="text-text-secondary mb-1 leading-relaxed font-medium">
-            Cleve Mufti Athyrashad
+            Fathy Rashad
           </p>
           <p className="text-text-secondary mb-8 leading-relaxed">
             <a href={`mailto:${SITE.email}`} className="text-clay hover:text-clay-hover transition-colors">
@@ -244,7 +244,7 @@ export default function FundersPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a href={`mailto:${SITE.email}`} className="btn-pill btn-pill-clay text-base px-8 py-3">
-              Email Cleve
+              Email Rashad
             </a>
             <a
               href="https://cal.com/mfrashad"

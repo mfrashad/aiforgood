@@ -119,7 +119,7 @@ export default function FaqPage() {
           </p>
           <div className="flex flex-wrap gap-3">
             <a href="mailto:m.fathyrashad@gmail.com" className="btn-pill btn-pill-clay px-8 py-3 text-base">
-              Email Cleve
+              Email Rashad
             </a>
             <a href="/act" className="btn-pill btn-pill-outline px-8 py-3 text-base">
               See what to do right now →
