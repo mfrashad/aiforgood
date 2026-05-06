@@ -1,6 +1,6 @@
 import Image from "next/image";
 import {
-  FEATURED_PROJECT,
+  FEATURED_PROJECTS,
   COMMUNITY_PROJECTS,
   HELPED_NGOS,
   SITE,
@@ -30,64 +30,63 @@ export default function ProjectsSection() {
           </p>
         </div>
 
-        {/* Featured project */}
-        <div className="card-flat overflow-hidden mb-8">
-          <div className="md:flex">
-            {/* Info side */}
-            <div className="md:w-1/2 p-8">
-              <span className="text-xs font-medium text-olive bg-olive/15 px-3 py-1 rounded-full inline-block mb-4">
-                FEATURED
-              </span>
-              <h3
-                className="text-2xl text-text-primary mb-3"
-                style={{ fontFamily: "var(--font-serif)", fontWeight: 600 }}
-              >
-                {FEATURED_PROJECT.title}
-              </h3>
-              <p className="text-[15px] text-text-secondary leading-relaxed mb-5">
-                {FEATURED_PROJECT.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {FEATURED_PROJECT.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs bg-surface-raised text-text-secondary px-3 py-1 rounded-full"
+        {/* Featured projects */}
+        {FEATURED_PROJECTS.map((project) => (
+          <div key={project.title} className="card-flat overflow-hidden mb-8">
+            <div className="md:flex">
+              <div className="md:w-1/2 p-8">
+                <span className="text-xs font-medium text-olive bg-olive/15 px-3 py-1 rounded-full inline-block mb-4">
+                  FEATURED
+                </span>
+                <h3
+                  className="text-2xl text-text-primary mb-3"
+                  style={{ fontFamily: "var(--font-serif)", fontWeight: 600 }}
+                >
+                  {project.title}
+                </h3>
+                <p className="text-[15px] text-text-secondary leading-relaxed mb-5">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs bg-surface-raised text-text-secondary px-3 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-pill btn-pill-clay text-sm py-2 px-5"
                   >
-                    {tag}
-                  </span>
-                ))}
+                    Live Demo &rarr;
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-pill btn-pill-outline text-sm py-2 px-5"
+                  >
+                    GitHub
+                  </a>
+                </div>
               </div>
-              <div className="flex gap-3">
-                <a
-                  href={FEATURED_PROJECT.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill btn-pill-clay text-sm py-2 px-5"
-                >
-                  Live Demo &rarr;
-                </a>
-                <a
-                  href={FEATURED_PROJECT.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill btn-pill-outline text-sm py-2 px-5"
-                >
-                  GitHub
-                </a>
+              <div className="md:w-1/2 relative min-h-[240px]">
+                <Image
+                  src={project.imageUrl}
+                  alt={project.imageAlt}
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
-            </div>
-
-            {/* Preview side */}
-            <div className="md:w-1/2 relative min-h-[240px]">
-              <Image
-                src="/sprites/projects/aiadoption.png"
-                alt="AI Adoption by Country screenshot"
-                fill
-                className="object-cover object-top"
-              />
             </div>
           </div>
-        </div>
+        ))}
 
         {/* NGOs We Helped */}
         {HELPED_NGOS.map((ngo) => (

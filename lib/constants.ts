@@ -54,14 +54,31 @@ export const ROLES = [
   },
 ];
 
-export const FEATURED_PROJECT = {
-  title: "AI Adoption by Country",
-  description:
-    "Interactive visualization + open data API tracking AI adoption across 16 countries. From UAE at 64% to Nigeria at 7%. Data sourced from Microsoft, Stanford HAI, OECD, and 11 other authoritative sources.",
-  tags: ["Open Data", "JSON API", "16 Countries", "React"],
-  liveUrl: "https://aiadoption-gray.vercel.app",
-  githubUrl: "https://github.com/mfrashad/aiadoption",
-};
+export const FEATURED_PROJECTS = [
+  {
+    title: "AI Adoption by Country",
+    description:
+      "Interactive visualization + open data API tracking AI adoption across 16 countries. From UAE at 64% to Nigeria at 7%. Data sourced from Microsoft, Stanford HAI, OECD, and 11 other authoritative sources.",
+    tags: ["Open Data", "JSON API", "16 Countries", "React"],
+    liveUrl: "https://aiadoption-gray.vercel.app",
+    githubUrl: "https://github.com/mfrashad/aiadoption",
+    imageUrl: "/sprites/projects/aiadoption.png",
+    imageAlt: "AI Adoption by Country screenshot",
+  },
+  {
+    title: "Bookshelf",
+    description:
+      "Turn your reading library into a beautiful shareable poster. Import from Goodreads or Hardcover, pick a visualization style, and download. Built on World Book Day to raise awareness for global literacy — 773 million adults cannot read.",
+    tags: ["Next.js", "Open Source", "Literacy", "World Book Day"],
+    liveUrl: "https://bookshelf.aiforgood.my",
+    githubUrl: "https://github.com/mfrashad/bookshelf",
+    imageUrl: "/sprites/projects/bookshelf.png",
+    imageAlt: "Bookshelf — book cover grid visualization",
+  },
+];
+
+/** @deprecated use FEATURED_PROJECTS */
+export const FEATURED_PROJECT = FEATURED_PROJECTS[0];
 
 export const CONTENT_TYPES = [
   {
