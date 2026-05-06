@@ -6,6 +6,7 @@ import CommunitySection from "@/components/rooms/CommunityRoom";
 import AdvocacySection from "@/components/rooms/AdvocacyRoom";
 import ProjectsSection from "@/components/rooms/ProjectsRoom";
 import VisionSection from "@/components/rooms/VisionRoom";
+import WhyNowRoom from "@/components/rooms/WhyNowRoom";
 import JoinSection from "@/components/rooms/JoinRoom";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <StatsBar />
       <VisionSection />
+      <WhyNowRoom />
       <InitiativesSection />
       <CommunitySection />
       <AdvocacySection />

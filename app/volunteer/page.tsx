@@ -14,6 +14,7 @@ const ACCENT_COLORS: Record<string, string> = {
   "accent-sky": "text-sky",
   "accent-clay": "text-clay",
   "accent-olive": "text-olive",
+  "accent-fig": "text-fig",
 };
 
 export default function VolunteerPage() {
@@ -33,9 +34,8 @@ export default function VolunteerPage() {
             Volunteer with AI for Good
           </h1>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
-            We&apos;re building a community of builders, advocates, and organizers
-            who use AI for social good in Southeast Asia. Fully volunteer-run.
-            Deeply mission-driven.
+            We build open-source AI tools for NGOs, create AI literacy content,
+            and run builder events across Southeast Asia. Everyone here is a volunteer.
           </p>
           <a
             href="#apply"
@@ -57,16 +57,14 @@ export default function VolunteerPage() {
               About AI for Good
             </h2>
             <p className="text-text-secondary leading-relaxed">
-              AI is humanity&apos;s most transformative invention — yet the systems
-              around it only reward profit. Without deliberate intervention, AI will
-              solve problems for the privileged few, leaving underserved communities,
-              nonprofits, and social enterprises behind.
+              AI is being built to maximize returns for shareholders. The organizations
+              that could most use it — food banks, refugee legal aid clinics, rural
+              schools — are the ones no company will build for.
             </p>
             <p className="text-text-secondary leading-relaxed mt-3">
-              AI for Good is a fully volunteer-run community shipping open-source
-              AI tools, helping NGOs adopt technology, and advocating for responsible
-              AI in Southeast Asia and beyond. Every role here is unpaid — and
-              genuinely impactful.
+              AI for Good is a volunteer community. We build open-source tools for
+              NGOs, make AI accessible in multiple languages, and run community events.
+              No one gets paid.
             </p>
           </div>
         </div>
@@ -80,10 +78,9 @@ export default function VolunteerPage() {
           {/* Sub-headline */}
           <div className="mb-12 pl-6 border-l-4 border-clay">
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
-              The most valuable thing you can give to public-interest AI right
-              now is not money. It is the skill the market is paying you
-              handsomely to use elsewhere. We need your nights, your weekends,
-              and — if you can spare it — a sabbatical.
+              The skill the market pays you to use elsewhere is the scarcest
+              resource in this community. A few hours a week compounds.
+              A sabbatical sets the direction.
             </p>
           </div>
 
@@ -121,7 +118,7 @@ export default function VolunteerPage() {
                           key={i}
                           className="text-sm text-text-secondary leading-relaxed flex gap-2"
                         >
-                          <span className="text-text-secondary/40 flex-shrink-0 mt-0.5">—</span>
+                          <span className="text-text-secondary/40 flex-shrink-0 mt-0.5">+</span>
                           {r}
                         </li>
                       ))}
@@ -137,7 +134,7 @@ export default function VolunteerPage() {
                           key={i}
                           className="text-sm text-text-secondary leading-relaxed flex gap-2"
                         >
-                          <span className="text-text-secondary/40 flex-shrink-0 mt-0.5">—</span>
+                          <span className="text-text-secondary/40 flex-shrink-0 mt-0.5">+</span>
                           {w}
                         </li>
                       ))}

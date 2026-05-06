@@ -25,59 +25,35 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Initiatives */}
+          {/* Pages */}
           <div>
             <h4 className="text-xs font-semibold text-text-tertiary uppercase tracking-widest mb-4">
-              Initiatives
+              Pages
             </h4>
             <div className="flex flex-col gap-3">
-              <a
-                href="#community"
-                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
-              >
-                Community
+              <a href="/act" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
+                Take Action
               </a>
-              <a
-                href="#advocacy"
-                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
-              >
-                Advocacy
+              <a href="/why-now" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
+                Why This Matters
               </a>
-              <a
-                href="#projects"
-                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
-              >
-                Projects
+              <a href="/manifesto" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
+                Manifesto
               </a>
-              <a
-                href="#vision"
-                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
-              >
-                Vision
+              <a href="/faq" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
+                FAQ
               </a>
-              <a
-                href="/volunteer"
-                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
-              >
+              <a href="/roadmap" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
+                Roadmap
+              </a>
+              <a href="/volunteer" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
                 Volunteer
               </a>
-              <a
-                href="/partners"
-                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
-              >
+              <a href="/partners" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
                 Partner with Us
               </a>
-              <a
-                href="/funders"
-                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
-              >
+              <a href="/funders" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
                 Support the Work
-              </a>
-              <a
-                href="/manifesto"
-                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
-              >
-                Manifesto
               </a>
             </div>
           </div>

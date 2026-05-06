@@ -31,11 +31,10 @@ export default function HeroSection() {
 
         {/* Subtext */}
         <p className="text-lg sm:text-xl text-text-secondary max-w-xl mb-3 leading-relaxed">
-          A community of AI builders using technology for social impact
+          A community of AI builders who ship tools for NGOs in Southeast Asia.
         </p>
         <p className="text-base sm:text-lg text-text-secondary max-w-xl mb-12 leading-relaxed">
-          Shipping open-source tools, helping NGOs, and educating communities
-          in Southeast Asia and beyond.
+          We build open-source software, create AI literacy content, and keep everything free.
         </p>
 
         {/* CTAs */}

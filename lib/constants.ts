@@ -92,24 +92,24 @@ export const CONTENT_TYPES = [
 
 export const VISION = {
   problem: [
-    "AI is arguably humanity's most transformative invention — yet the systems around it only reward profit. Some of the world's most pressing problems will stay unsolved if we only optimize for revenue.",
-    "Without deliberate intervention, AI will only solve problems for the privileged few — not the problems that matter most. The people who need it most — underserved communities, nonprofits, social enterprises — get left behind.",
+    "AI is being built to maximize returns for shareholders. Problems that don't generate revenue stay unsolved.",
+    "The organizations that could most use AI are the ones no company will build for. Food banks, refugee legal aid clinics, rural schools. They are not paying customers.",
   ],
   problemImage: "/sprites/vision-problem.png",
   vision: [
     {
-      title: "Incentivize Impact, Not Just Profit",
-      text: "We fund, build, and champion projects that exist for social good — not shareholder returns. If the market won't support it, we will.",
+      title: "Build What the Market Won't",
+      text: "We build and fund projects the market won't touch. If no company will ship it, we will.",
       image: "/sprites/vision-fund.png",
     },
     {
-      title: "Enable NGOs & Everyone to Benefit from AI",
-      text: "AI lets a single volunteer build what used to take a team. We educate people on AI, help NGOs build their own tech, and connect builders directly to organizations that need them.",
+      title: "Put AI in the Hands of NGOs",
+      text: "AI lets one volunteer build what used to take a team. We show NGOs what's possible, match them with builders, and ship the tool together.",
       image: "/sprites/vision-volunteer.png",
     },
     {
-      title: "Open Source & Democratize AI",
-      text: "AI was trained on the collective knowledge of the internet — it should belong to everyone. We keep our work open source to democratize access, share data, and prevent the centralization of power.",
+      title: "Keep Everything Open",
+      text: "AI was trained on what humanity wrote. We publish everything as MIT-licensed code. The next builder starts where we left off, not from scratch.",
       image: "/sprites/vision-opensource.png",
     },
   ],
@@ -290,30 +290,73 @@ export const ROLE_DETAILS = [
   },
 ];
 
+export const MANIFESTO_CLAIMS = [
+  {
+    n: "01",
+    claim:
+      "AI's benefits are concentrating. This is the expected outcome of building AI to maximize returns for shareholders.",
+    evidence:
+      "Five companies control 71% of the world's AI compute, up from 63% eighteen months earlier. US private AI investment reached $285.9 billion in 2025. The Global South received a rounding error.",
+    source: "Epoch AI 2025; Stanford HAI 2026 AI Index",
+  },
+  {
+    n: "02",
+    claim:
+      "The communities that will be most transformed by AI are the least represented in building it.",
+    evidence:
+      "93% of the world's languages are absent from AI training data. Facial recognition systems misidentify dark-skinned faces 10 to 100 times more often than light-skinned ones. The Foundation Model Transparency Index dropped from 58 to 40 in a single year.",
+    source: "Nature 2025; MIT Sloan; Stanford HAI 2026",
+  },
+  {
+    n: "03",
+    claim:
+      "Open-source AI built by volunteer communities is one of the few mechanisms that consistently produces tools for people markets ignore.",
+    evidence:
+      "Hugging Face grew from 160,000 to 1.57 million generative AI model repositories in two years. 46% of Fortune 500 leaders prefer open models. The AI Adoption by Country API is MIT-licensed, tracks 16 countries, and is used by researchers for free.",
+    source: "Mozilla Foundation 2024; our own data",
+  },
+  {
+    n: "04",
+    claim:
+      "AI literacy is not a luxury. AI systems already make decisions about jobs, loans, content, and public services. Communities that cannot read those decisions are subject to them.",
+    evidence:
+      "5M+ views of AI literacy content produced by this community, mostly in English and Bahasa Malaysia — languages underrepresented in AI safety discourse.",
+    source: "",
+  },
+  {
+    n: "05",
+    claim:
+      "The window to build public-interest AI infrastructure is closing. The compute concentration ratio moved from 63% to 71% in eighteen months. The trend is not slowing.",
+    evidence:
+      "The OECD and the UN both concluded in 2024 that AI must be governed as public commons. The policy consensus exists. The implementation does not. Communities like this one are part of filling that gap.",
+    source: "OECD.AI 2025; UN Governing AI for Humanity 2024",
+  },
+];
+
 export const VOLUNTEER_EXPECTATIONS = [
   {
     icon: "🎯",
     title: "Passion for the Mission",
-    body: "You care about AI being used for social good — not shareholder returns. You come in with a mindset of giving, not for personal gain.",
+    body: "You believe AI should serve communities, not shareholders. You show up to contribute, not to build your portfolio.",
   },
   {
     icon: "🤲",
     title: "Volunteerism",
-    body: "This role is unpaid. Past members have found it a fulfilling experience contributing to something larger than themselves.",
+    body: "This role is unpaid. Past members have shipped real tools, spoken at conferences, and built working relationships they would not have found otherwise.",
   },
   {
     icon: "🛠️",
     title: "Resourcefulness",
-    body: "We stay lean. Come with a \"make it work\" mentality — find creative solutions and be ready to get your hands dirty.",
+    body: "We run lean. If something is broken, fix it. If a tool doesn't exist, build it. We don't wait for resources.",
   },
   {
     icon: "📆",
     title: "Commitment",
-    body: "We ask for 3–7 hrs/week, consistently. We're counting on you to deliver on time and stay engaged throughout your term.",
+    body: "We need 3 to 7 hours a week, every week. Deliver what you commit to. Show up when you say you will.",
   },
   {
     icon: "📱",
     title: "Clear Communication",
-    body: "We operate remotely. Be responsive, proactive, and keep your team updated on your progress — no going dark.",
+    body: "We work remotely. Reply to messages. Update your team before they ask. Don't go silent.",
   },
 ];

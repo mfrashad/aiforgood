@@ -8,7 +8,7 @@ const INITIATIVES = [
     accent: "accent-olive",
     image: "/sprites/initiative-community.png",
     description:
-      "Biweekly sessions connecting builders to NGOs and social impact orgs. Part workshop, part co-working, part open hangout. We form teams, match real needs to builders, and ship projects that matter.",
+      "Biweekly sessions where builders meet NGOs, scope real problems, and form teams. We show up, pair with a real org, and ship.",
     cta: { label: "Join as Volunteer Committee", href: "/volunteer" },
   },
   {
@@ -18,7 +18,7 @@ const INITIATIVES = [
     accent: "accent-clay",
     image: "/sprites/initiative-advocacy.png",
     description:
-      "Educational content making AI accessible to everyone. Talks, short-form videos, blogs, and infographics advocating for responsible AI, AI safety, and open-source AI for social good. Content in English and Bahasa Malaysia.",
+      "Short-form videos, talks, blogs, and infographics on AI safety and public-interest AI. In English and Bahasa Malaysia. 5M+ views.",
     cta: { label: "View Content", href: "#advocacy" },
   },
   {
@@ -28,7 +28,7 @@ const INITIATIVES = [
     accent: "accent-sky",
     image: "/sprites/initiative-projects.png",
     description:
-      "A growing collection of open-source projects that use AI for social good. Each project ships reusable components — datasets, APIs, templates — so the next builder inherits, not rebuilds.",
+      "Open-source projects built for real NGO problems. Each one ships a dataset, API, or template so the next builder starts where we left off.",
     cta: { label: "Browse Projects", href: "#projects" },
   },
 ];
@@ -41,8 +41,7 @@ export default function InitiativesSection() {
           What we build
         </h2>
         <p className="text-lg text-text-secondary text-center mb-14 max-w-2xl mx-auto">
-          Community, advocacy, and open-source projects — the three levers of
-          public-interest AI.
+          Three things: community sessions, AI literacy content, and open-source projects.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">

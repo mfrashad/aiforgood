@@ -75,10 +75,9 @@ export default function PartnersPage() {
             We build for organizations that markets ignore.
           </h1>
           <p className="text-lg text-text-secondary max-w-2xl leading-relaxed mb-10">
-            If your organization serves people no SaaS company is going to build
-            for, and you have an operational bottleneck that AI could solve, we
-            want to hear from you. We do this work for free, openly, and we
-            ship.
+            Your organization serves people no SaaS company will build for. You
+            have a bottleneck AI could fix. Tell us. We scope, build, and ship
+            for free.
           </p>
           <div className="flex flex-wrap gap-3">
             <a href={`mailto:${SITE.email}`} className="btn-pill btn-pill-clay text-base px-8 py-3">
@@ -96,11 +95,10 @@ export default function PartnersPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="heading-section text-text-primary mb-3">Who we work with</h2>
           <p className="text-lg text-text-secondary mb-10 leading-relaxed">
-            NGOs, social enterprises, public-sector teams, and community
-            organizations operating in Malaysia and Southeast Asia. We have
-            shipped for youth education nonprofits and are actively scoping work
-            with food banks, refugee legal aid, and government
-            service-translation teams.
+            We work with NGOs, public-sector teams, and social enterprises in
+            Malaysia and Southeast Asia. We have shipped for Pocket of Pink and
+            are scoping work with food banks, refugee legal aid clinics, and
+            government translation teams.
           </p>
 
           <div className="card-flat p-8 sm:p-10">
@@ -110,7 +108,7 @@ export default function PartnersPage() {
             <div className="space-y-4">
               {PRIORITY_CRITERIA.map((item, i) => (
                 <div key={i} className="flex gap-4">
-                  <span className="text-clay font-bold flex-shrink-0 mt-0.5">—</span>
+                  <span className="text-clay font-bold flex-shrink-0 mt-0.5">+</span>
                   <p className="text-sm text-text-secondary leading-relaxed">{item}</p>
                 </div>
               ))}
@@ -126,8 +124,8 @@ export default function PartnersPage() {
             What good problems look like
           </h2>
           <p className="text-lg text-text-secondary mb-10 leading-relaxed">
-            The strongest projects we have scoped share a shape: real cost,
-            repeatable, bounded, and generalizable.
+            The projects that work have a specific shape: a recurring cost, a
+            clear scope, and a codebase another NGO can reuse.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-6 mb-8">
