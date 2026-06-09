@@ -3,62 +3,59 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Roadmap — AI for Good Malaysia",
+  title: "Roadmap — Youth for Responsible AI",
   description:
-    "What AI for Good Malaysia is today and what becomes possible at each level of support. Scenario model from bootstrapped to infrastructure.",
+    "What Youth for Responsible AI is today and what becomes possible at each level of support. Scenario model from bootstrapped to infrastructure.",
 };
 
 const SCENARIOS = [
   {
     amount: "$10,000",
-    headline: "Community infrastructure becomes sustainable.",
+    headline: "Content production becomes consistent.",
     enables: [
-      "Consistent biweekly builder sessions with a structured NGO problem pipeline.",
-      "The founder focuses on scoping real problems instead of also running logistics.",
-      "2 to 3 NGO projects scoped and started per quarter.",
-      "A proper onboarding process so new volunteers can contribute in week one.",
+      "Dedicated production time for weekly video and article output on AI safety and responsible AI.",
+      "A structured editorial calendar so topics are researched and queued, not improvised.",
+      "Proper onboarding for Creators and Researchers so new contributors can publish in week one.",
+      "The founding team stops being the only ones doing everything.",
     ],
   },
   {
     amount: "$25,000",
-    headline: "The first flagship project ships with real resources.",
+    headline: "The first flagship research experiment ships properly.",
     enables: [
-      "A design budget for the NGO project — so it ships as something people will actually use.",
-      "Paid staff time from the NGO partner, so they co-own the build instead of receiving it.",
-      "Documentation and deployment guide so any city can fork and adapt the tool.",
-      "One fully documented open-source flagship per year.",
+      "Design and development budget for a focused interactive data experiment on an AI issue.",
+      "Documentation and open data release so any researcher can build on the work.",
+      "One fully documented, citable research experiment per year.",
+      "Time for a deeper data investigation beyond what volunteer hours allow.",
     ],
   },
   {
     amount: "$50,000",
-    headline: "The community doubles.",
+    headline: "The initiative scales.",
     enables: [
-      "A dedicated community organizer on a part-time contract.",
-      "Regular in-person events in 2 to 3 cities: Kuala Lumpur, Singapore, and one more.",
-      "5 or more active projects running simultaneously.",
-      "Content program scales to 10M views.",
+      "Dedicated content coordination — someone manages the pipeline so contributors can focus on creating.",
+      "Talks and workshops in multiple cities and online events globally.",
+      "Content program reaches a significantly wider youth audience.",
+      "Second language track added based on where the community is strongest.",
     ],
   },
   {
     amount: "$100,000",
     headline: "This becomes infrastructure.",
     enables: [
-      "Full-time coordination — the founder stops doing four jobs at once.",
-      "3 flagship open-source builds per year, each fully documented and reusable.",
-      "The AI Adoption API expands to 30 or more countries.",
-      "A Southeast Asia AI literacy curriculum, free and open, in English and Bahasa Malaysia.",
-      "Other cities can fork the entire model — community structure, project templates, NGO playbook.",
+      "Full-time coordination — the founding team stops doing four jobs at once.",
+      "Open data API expands to 30 or more countries.",
+      "A free AI safety literacy curriculum, open, designed for youth educators globally.",
+      "Other communities can fork the entire model — content structure, research templates, editorial playbook.",
     ],
   },
 ];
 
 const TODAY_ITEMS = [
-  "20+ active builders contributing code and content.",
-  "2 NGO partnerships — one shipped (Pocket of Pink), one in active scoping.",
-  "AI Adoption by Country API — 16 countries, MIT-licensed, used by researchers.",
-  "5M+ views of AI literacy content in English and Bahasa Malaysia.",
-  "Active communities in Kuala Lumpur, Singapore, and online.",
-  "20+ speaking engagements including Malaysia's Foreign Affairs Ministry (IDFR) and Yayasan Peneraju.",
+  "An active volunteer community publishing AI safety and responsible AI content.",
+  "Open data research experiments anyone can use, cite, and build on.",
+  "Speaking engagements at universities, policy forums, and community events.",
+  "A manifesto, a content library, and a growing contributor base.",
 ];
 
 export default function RoadmapPage() {
@@ -73,10 +70,10 @@ export default function RoadmapPage() {
             className="inline-flex items-center gap-2 mb-8 text-sm font-semibold text-text-primary bg-surface-raised px-5 py-2 rounded-full border-2 border-border"
             style={{ boxShadow: "3px 3px 0px #1a1b1f" }}
           >
-            COMMUNITY ROADMAP
+            ROADMAP
           </div>
           <h1 className="heading-display text-4xl sm:text-5xl text-text-primary mb-6 max-w-2xl">
-            What this community is.<br />
+            What this initiative is.<br />
             <span className="text-clay">What it can become.</span>
           </h1>
           <p className="text-lg text-text-secondary max-w-2xl leading-relaxed">
@@ -95,7 +92,7 @@ export default function RoadmapPage() {
             Everything you see was built in the gaps.
           </h2>
           <p className="text-lg text-text-secondary mb-10 leading-relaxed">
-            AI for Good Malaysia is a volunteer community. The founder is doing ops, community management, and technical work simultaneously. That is the constraint. It is also the proof that the model works before it has resources.
+            Youth for Responsible AI runs on volunteer time. The founding team handles content, research, speaking, and coordination simultaneously. That is the constraint. It is also the proof that the model works before it has resources.
           </p>
           <div className="card-flat p-8 sm:p-10">
             <div className="space-y-4">
@@ -160,7 +157,7 @@ export default function RoadmapPage() {
               These scenarios are cumulative. $25,000 includes everything $10,000 enables. $100,000 includes all of it.
             </p>
             <p className="text-base text-text-secondary leading-relaxed">
-              The community is doing useful work now. Funding changes the rate and scale. The mission exists with or without it.
+              The initiative is doing useful work now. Funding changes the rate and scale. The mission exists with or without it.
             </p>
           </div>
         </div>
@@ -178,7 +175,7 @@ export default function RoadmapPage() {
               Read the funders page
             </a>
             <a href="/act" className="btn-pill btn-pill-outline px-8 py-3 text-base">
-              Volunteer instead →
+              Contribute instead →
             </a>
           </div>
         </div>

@@ -104,12 +104,12 @@ export default function AdvocacySection() {
               Featured Videos
             </h3>
             <a
-              href="https://instagram.com/aiforgood.my"
+              href={`https://instagram.com`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-clay hover:text-clay-hover transition-colors"
             >
-              @aiforgood.my &rarr;
+              See all content &rarr;
             </a>
           </div>
 
@@ -168,10 +168,10 @@ export default function AdvocacySection() {
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="https://www.tiktok.com/@rashadventure?refer=embed"
+                      href="https://www.tiktok.com"
                       className="text-sm text-clay hover:text-clay-hover"
                     >
-                      @rashadventure
+                      Youth for Responsible AI
                     </a>
                   </section>
                 </blockquote>

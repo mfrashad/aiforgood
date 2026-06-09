@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
 import InitiativesSection from "@/components/InitiativesSection";
-import CommunitySection from "@/components/rooms/CommunityRoom";
 import AdvocacySection from "@/components/rooms/AdvocacyRoom";
 import ProjectsSection from "@/components/rooms/ProjectsRoom";
 import VisionSection from "@/components/rooms/VisionRoom";
@@ -12,15 +11,15 @@ import JoinSection from "@/components/rooms/JoinRoom";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "AI for Good Malaysia",
+  title: "Youth for Responsible AI",
   description:
-    "A volunteer community shipping open-source AI tools for NGOs, creating AI literacy content, and running builder events across Southeast Asia.",
-  alternates: { canonical: "https://aiforgood.my" },
+    "A youth-led community publishing content on AI safety, responsible AI, and the real risks of AI — to grow the next generation of informed decision-makers.",
+  alternates: { canonical: "https://youthforresponsibleai.com" },
   openGraph: {
-    title: "AI for Good Malaysia",
+    title: "Youth for Responsible AI",
     description:
-      "A volunteer community shipping open-source AI tools for NGOs, creating AI literacy content, and running builder events across Southeast Asia.",
-    url: "https://aiforgood.my",
+      "A youth-led community publishing content on AI safety, responsible AI, and the real risks of AI — to grow the next generation of informed decision-makers.",
+    url: "https://youthforresponsibleai.com",
   },
 };
 
@@ -33,7 +32,6 @@ export default function Home() {
       <VisionSection />
       <WhyNowRoom />
       <InitiativesSection />
-      <CommunitySection />
       <AdvocacySection />
       <ProjectsSection />
       <JoinSection />

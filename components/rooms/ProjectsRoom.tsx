@@ -1,17 +1,5 @@
 import Image from "next/image";
-import {
-  FEATURED_PROJECTS,
-  COMMUNITY_PROJECTS,
-  HELPED_NGOS,
-  SITE,
-} from "@/lib/constants";
-
-const PROJECT_SCREENSHOTS: Record<string, string> = {
-  MyMP: "/sprites/projects/mymp.png",
-  "Sedekah.je": "/sprites/projects/sedekah.png",
-  "Lepak Masjid": "/sprites/projects/lepakmasjid.png",
-  "Pasar Malam": "/sprites/projects/pasarmalam.png",
-};
+import { FEATURED_PROJECTS, SITE } from "@/lib/constants";
 
 export default function ProjectsSection() {
   return (
@@ -23,10 +11,10 @@ export default function ProjectsSection() {
             ACTIVE
           </span>
           <h2 className="heading-section text-text-primary mb-3">
-            Projects
+            Research &amp; Experiments
           </h2>
           <p className="text-lg text-text-secondary">
-            Open-source tools for social impact
+            Visualizing AI issues with open data
           </p>
         </div>
 
@@ -88,94 +76,6 @@ export default function ProjectsSection() {
           </div>
         ))}
 
-        {/* NGOs We Helped */}
-        {HELPED_NGOS.map((ngo) => (
-          <div
-            key={ngo.name}
-            className="card-flat overflow-hidden border border-olive/20 mb-8"
-          >
-            <div className="md:flex">
-              <div className="md:w-1/2 p-6">
-                <span className="text-xs font-medium text-olive bg-olive/15 px-3 py-1 rounded-full inline-block mb-3">
-                  {ngo.badge}
-                </span>
-                <h3
-                  className="text-xl text-text-primary mb-2"
-                  style={{ fontFamily: "var(--font-serif)", fontWeight: 600 }}
-                >
-                  {ngo.name}
-                </h3>
-                <p className="text-[15px] text-text-secondary leading-relaxed mb-4">
-                  {ngo.description}
-                </p>
-                <a
-                  href={ngo.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-clay hover:text-clay-hover transition-colors"
-                >
-                  Visit Website &rarr;
-                </a>
-              </div>
-              <div className="md:w-1/2 relative min-h-[200px]">
-                <Image
-                  src="/sprites/projects/pocketofpink.png"
-                  alt={`${ngo.name} website screenshot`}
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-
-        {/* Community Projects */}
-        <div className="mb-8">
-          <h3
-            className="text-lg text-text-secondary mb-5"
-            style={{ fontFamily: "var(--font-serif)", fontWeight: 600 }}
-          >
-            Local Open Source Projects
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {COMMUNITY_PROJECTS.map((project) => (
-              <a
-                key={project.name}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card overflow-hidden group"
-              >
-                <div className="relative w-full aspect-[16/10] bg-surface">
-                  <Image
-                    src={PROJECT_SCREENSHOTS[project.name]}
-                    alt={`${project.name} screenshot`}
-                    fill
-                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-5">
-                  <h4
-                    className="text-base text-text-primary group-hover:text-clay transition-colors mb-1"
-                    style={{ fontFamily: "var(--font-serif)", fontWeight: 600 }}
-                  >
-                    {project.name}
-                  </h4>
-                  <p className="text-sm text-text-secondary leading-relaxed mb-2">
-                    {project.description}
-                  </p>
-                  <span className="text-xs text-text-tertiary">
-                    {project.url.replace("https://", "")} &rarr;
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
-          <p className="text-xs text-text-tertiary mt-4 italic">
-            Non-affiliated local projects building for social good
-          </p>
-        </div>
-
         {/* Submit / Shared Resources */}
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="card-flat border border-border border-dashed p-8 text-center">
@@ -184,11 +84,10 @@ export default function ProjectsSection() {
               className="text-base text-text-primary mb-2"
               style={{ fontFamily: "var(--font-serif)", fontWeight: 600 }}
             >
-              Your Project Here
+              Your Experiment Here
             </h4>
             <p className="text-sm text-text-secondary mb-4">
-              Have an open-source AI project for social good? We want to feature
-              it.
+              Have a small open data project that makes an AI issue tangible? We want to feature it.
             </p>
             <a
               href={SITE.github}
@@ -206,10 +105,10 @@ export default function ProjectsSection() {
               className="text-base text-text-primary mb-2"
               style={{ fontFamily: "var(--font-serif)", fontWeight: 600 }}
             >
-              Shared Resources
+              Shared Datasets
             </h4>
             <p className="text-sm text-text-secondary mb-4">
-              Reusable datasets, APIs, and templates from community projects.
+              Reusable open datasets and APIs from our research experiments.
               Coming soon.
             </p>
             <span className="text-sm text-text-tertiary">In Progress</span>

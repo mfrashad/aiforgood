@@ -1,55 +1,41 @@
 export const SITE = {
-  name: "AI for Good",
-  domain: "aiforgood.my",
+  name: "Youth for Responsible AI",
+  domain: "youthforresponsibleai.com",
   description:
-    "Open-source AI projects, community, and advocacy for social impact in Southeast Asia and beyond.",
-  email: "m.fathyrashad@gmail.com",
-  github: "https://github.com/mfrashad/aiforgood",
-  twitter: "https://x.com/maboroshiiii",
-  tiktok: "https://tiktok.com/@mfrashad",
+    "A youth-led community publishing content on AI safety, responsible AI, and the real risks of AI — to grow the next generation of informed decision-makers.",
+  email: "hello@youthforresponsibleai.com", // TODO: update with your real email
+  github: "https://github.com/youthforresponsibleai", // TODO: update
+  twitter: "https://x.com/youthforrai", // TODO: update
+  tiktok: "https://tiktok.com/@youthforrai", // TODO: update
 };
 
 export const STATS = [
-  { value: "20+", label: "Active Builders" },
-  { value: "2", label: "NGOs Served" },
-  { value: "16", label: "Countries Tracked" },
-  { value: "5M+", label: "Content Views" },
+  { value: "TODO", label: "Youth Contributors" },
+  { value: "TODO", label: "Countries Reached" },
+  { value: "TODO", label: "Pieces Published" },
+  { value: "100%", label: "Open Access" },
 ];
 
 export const NAV_LINKS = [
   { href: "/manifesto", label: "Manifesto" },
-  { href: "/#community", label: "Community" },
-  { href: "/#advocacy", label: "Advocacy" },
-  { href: "/#projects", label: "Projects" },
+  { href: "/why-now", label: "The Case" },
+  { href: "/#advocacy", label: "Content" },
+  { href: "/#projects", label: "Research" },
 ];
 
 export const ROLES = [
   {
-    id: "builder",
-    title: "Builder",
+    id: "creator",
+    title: "Creator",
     description:
-      "Contribute code to open-source projects. Ship tools that help real orgs.",
-    emoji: "wrench",
-  },
-  {
-    id: "advocate",
-    title: "Advocate",
-    description:
-      "Create content, translate materials, speak at events, spread the word.",
+      "Make AI safety and responsible AI understandable — short-form video, articles, infographics, and threads in your language.",
     emoji: "megaphone",
-  },
-  {
-    id: "organizer",
-    title: "Organizer",
-    description:
-      "Host meetups or run the day-to-day: Discord, events, posters, logistics.",
-    emoji: "clipboard",
   },
   {
     id: "researcher",
     title: "Researcher",
     description:
-      "Produce data and analysis on AI adoption, NGO digital readiness, and public-sector AI in SEA.",
+      "Turn AI risks into visual, understandable explainers — data visualizations, open datasets, and interactive experiments anyone can cite.",
     emoji: "chart",
   },
 ];
@@ -58,22 +44,22 @@ export const FEATURED_PROJECTS = [
   {
     title: "AI Adoption by Country",
     description:
-      "Interactive visualization + open data API tracking AI adoption across 16 countries. From UAE at 64% to Nigeria at 7%. Data sourced from Microsoft, Stanford HAI, OECD, and 11 other authoritative sources.",
-    tags: ["Open Data", "JSON API", "16 Countries", "React"],
+      "A research experiment tracking AI adoption across 16 countries — interactive data visualization and open API. From UAE at 64% to Nigeria at 7%. Data sourced from Microsoft, Stanford HAI, OECD, and 11 other authoritative sources. Free for anyone to use.",
+    tags: ["Open Data", "JSON API", "16 Countries", "Data Viz"],
     liveUrl: "https://aiadoption-gray.vercel.app",
     githubUrl: "https://github.com/mfrashad/aiadoption",
     imageUrl: "/sprites/projects/aiadoption.png",
     imageAlt: "AI Adoption by Country screenshot",
   },
   {
-    title: "Bookshelf",
+    title: "Foundation Model Transparency Tracker",
     description:
-      "Turn your reading library into a beautiful shareable poster. Import from Goodreads or Hardcover, pick a visualization style, and download. Built on World Book Day to raise awareness for global literacy — 773 million adults cannot read.",
-    tags: ["Next.js", "Open Source", "Literacy", "World Book Day"],
-    liveUrl: "https://bookshelf.aiforgood.my",
-    githubUrl: "https://github.com/mfrashad/bookshelf",
+      "Tracking how transparent major AI systems are over time — because Stanford HAI's Foundation Model Transparency Index dropped from 58 to 40 in a single year. Open data anyone can build on.",
+    tags: ["Open Data", "AI Safety", "Transparency", "Data Viz"],
+    liveUrl: "#", // TODO: replace with real project URL
+    githubUrl: "#",
     imageUrl: "/sprites/projects/bookshelf.png",
-    imageAlt: "Bookshelf — book cover grid visualization",
+    imageAlt: "Foundation Model Transparency Tracker",
   },
 ];
 
@@ -83,18 +69,18 @@ export const FEATURED_PROJECT = FEATURED_PROJECTS[0];
 export const CONTENT_TYPES = [
   {
     id: "videos",
-    badge: "TikTok · Instagram",
+    badge: "TikTok · Instagram · YouTube",
     title: "Short-form Videos",
     description:
-      "Making AI concepts accessible in 60 seconds. AI safety, open source, and tech for good explained for everyone.",
+      "Making AI safety and AI risk accessible in 60 seconds — algorithmic bias, AI concentration, autonomous systems, and what it all means for your generation. No jargon.",
     image: "/sprites/advocacy-videos.png",
   },
   {
     id: "articles",
-    badge: "Blog · Tutorials",
+    badge: "Blog · Deep Dives",
     title: "Articles & Guides",
     description:
-      "Technical tutorials, AI safety guides, and thought pieces on responsible AI. Published in English and Bahasa Malaysia.",
+      "Long-form explainers on AI safety, responsible AI policy, and the risks of unchecked AI development. Written for people who will eventually make decisions about AI.",
     image: "/sprites/advocacy-articles.png",
   },
   {
@@ -102,207 +88,83 @@ export const CONTENT_TYPES = [
     badge: "Infographics · Data Viz",
     title: "Infographics & Data",
     description:
-      "Visual explainers on AI adoption, safety, and impact. Open data visualizations anyone can share and build on.",
+      "Visual explainers on AI adoption, safety, and impact. Open data visualizations anyone can share, cite, and build on.",
     image: "/sprites/advocacy-infographics.png",
   },
 ];
 
 export const VISION = {
   problem: [
-    "AI is being built to maximize returns for shareholders. Problems that don't generate revenue stay unsolved.",
-    "The organizations that could most use AI are the ones no company will build for. Food banks, refugee legal aid clinics, rural schools. They are not paying customers.",
+    "AI is reshaping jobs, media, finance, and public services — but the people most affected by AI decisions have the least say in how those systems are built.",
+    "The window to shape AI governance is narrow. The decisions being made now — about who owns AI infrastructure, who it serves, and who is accountable for its harms — will define the next century.",
   ],
   problemImage: "/sprites/vision-problem.png",
   vision: [
     {
-      title: "Build What the Market Won't",
-      text: "We build and fund projects the market won't touch. If no company will ship it, we will.",
+      title: "Make AI Risks Understandable",
+      text: "We publish content that makes AI safety and AI risks legible to everyone — short-form video, writing, and data designed for people who will vote on, regulate, or build with AI.",
       image: "/sprites/vision-fund.png",
     },
     {
-      title: "Put AI in the Hands of NGOs",
-      text: "AI lets one volunteer build what used to take a team. We show NGOs what's possible, match them with builders, and ship the tool together.",
+      title: "Show, Don't Just Tell",
+      text: "We build research experiments that make AI issues tangible: data visualizations, interactive tools, and open datasets anyone can explore and cite.",
       image: "/sprites/vision-volunteer.png",
     },
     {
       title: "Keep Everything Open",
-      text: "AI was trained on what humanity wrote. We publish everything as MIT-licensed code. The next builder starts where we left off, not from scratch.",
+      text: "Every dataset, project, and piece of content we produce is free. The next creator or researcher starts where we left off, not from scratch.",
       image: "/sprites/vision-opensource.png",
     },
   ],
 };
 
-export const COMMUNITY_PROJECTS = [
-  {
-    name: "MyMP",
-    url: "https://mymp.org.my",
-    description: "Track Malaysian Members of Parliament — voting records, attendance, and more.",
-  },
-  {
-    name: "Sedekah.je",
-    url: "https://sedekah.je",
-    description: "Open-source donation directory connecting donors to verified causes across Malaysia.",
-  },
-  {
-    name: "Lepak Masjid",
-    url: "https://lepakmasjid.app",
-    description: "Find mosques, prayer times, and community events near you.",
-  },
-  {
-    name: "Pasar Malam",
-    url: "https://pasarmalam.app",
-    description: "Night market directory mapping locations and schedules across Malaysia.",
-  },
-];
-
-export const HELPED_NGOS = [
-  {
-    name: "Pocket of Pink",
-    url: "https://www.pocketofpink.com",
-    description: "Youth education nonprofit — we helped ship their website in a single day using AI.",
-    badge: "NGO WE HELPED",
-  },
-];
-
 export const AI_COMMUNITIES = [
   {
-    name: "Build Club",
-    description:
-      "AI learning community focused on building, with AI-native courses and certifications.",
-    url: "https://www.buildclub.ai/",
+    name: "AI Safety Hub",
+    description: "Global network of AI safety researchers and communicators.",
+    url: "#", // TODO: replace with real partner communities
     image: "/communities/build-club-logo-navbar.webp",
-  },
-  {
-    name: "Build with AI",
-    description:
-      "Project showcase for the Build With AI Malaysia community, featuring AI projects built by Malaysian builders.",
-    url: "https://buildwithai.my/",
-    image: "/communities/build_with_ai_logo.jpeg",
-  },
-  {
-    name: "AI Tinkerers",
-    description:
-      "Global community of AI engineers and researchers building real systems and sharing unfinished work.",
-    url: "https://kuala-lumpur.aitinkerers.org/",
-    image: "/communities/ai_tinkerers_logo.png",
-  },
-  {
-    name: "AI Hackerdorm",
-    description:
-      "Student-first community hosting regular builder sessions with project showcases and mentorship.",
-    url: "https://aihackerdorm.com/",
-    image: "/communities/ai_hackerdorm.webp",
-  },
-  {
-    name: "AI SEA",
-    description:
-      "Southeast Asia grassroots builder movement connecting local communities into a coalition.",
-    url: "https://www.aisea.builders/",
-    image: "/communities/aisea_logo.png",
-  },
-  {
-    name: "Rakan Tutor",
-    description:
-      "Free AI programs for ASEAN youth through hands-on workshops and a digital learning platform.",
-    url: "https://rakantutor.org/",
-    image: "/communities/rakan-tutor-logo.png",
-  },
-  {
-    name: "Cursor Malaysia",
-    description:
-      "The Cursor community for Malaysia, hosting hackathons, meetups, and workshops.",
-    url: "https://www.instagram.com/cursor.my/",
-    image: "/communities/cursor_my_logo.jpg",
-  },
-  {
-    name: "CoderPuffs",
-    description:
-      "A women-first initiative where we learn coding and AI while cafe-hopping together.",
-    url: "https://www.instagram.com/coderpuffs/",
-    image: "/communities/coderpuffs_logo.jpg",
-  },
-  {
-    name: "500 AI Residency",
-    description:
-      "An AI residency program focused on rapid building and shipping, bringing together builders to create and scale AI projects.",
-    url: "https://www.500.house/",
   },
 ];
 
 export const TALKS_DESCRIPTION =
-  "20+ speaking engagements at meetups, conferences, and government briefings including Malaysia's Foreign Affairs Ministry (IDFR) and Yayasan Peneraju. Featured on Bernama TV, RTM TV1, Era.fm, and Kosmo.";
+  "Speaking at universities, policy forums, community events, and online panels on AI safety, AI risk, and responsible AI governance for the next generation.";
 
 export const ROLE_DETAILS = [
   {
-    id: "builder",
-    title: "Builder",
-    tagline: "Build open-source AI tools for social impact and local community problems.",
-    commitment: "3–7 hrs / week",
-    accentClass: "accent-sky",
-    responsibilities: [
-      "Take full ownership as PIC (Person In Charge) of one project end-to-end — start a new one, or take over an existing one until it ships.",
-      "Projects tackle real problems: NGO needs, underserved communities, local causes in Southeast Asia — not random open source.",
-      "Open-source the work where possible and keep the community updated on your progress.",
-      "Scope, build, iterate, and hand off with documentation when done.",
-    ],
-    whoFits: [
-      "Experienced devs, vibe coders, AI-assisted builders, and curious beginners",
-      "Anyone willing to own a project end-to-end — we'll match your level to the right scope",
-      "People who want their work to reach real users with real needs",
-    ],
-  },
-  {
-    id: "advocate",
-    title: "Advocate",
-    tagline: "Be the voice of AI for Good.",
+    id: "creator",
+    title: "Creator",
+    tagline: "Make AI safety and responsible AI understandable for everyone.",
     commitment: "~1 post / week",
     accentClass: "accent-clay",
     responsibilities: [
-      "Publish ~1 piece of content per week in any format: short-form video, blog post, tweet/thread, or infographic.",
-      "Topics: AI social-impact & safety awareness, OR marketing AI for Good's projects and events.",
-      "Claim content requests posted by builders when they need launch coverage or a specific topic covered.",
-      "Publish in English or Bahasa Malaysia.",
+      "Publish ~1 piece of content per week: short-form video, blog post, thread, or infographic.",
+      "Topics: AI safety, AI risk, algorithmic bias, AI rights, responsible AI — explained without jargon.",
+      "Publish in any language — your language is a contribution in itself.",
+      "Respond to content requests when the community needs coverage of a specific AI topic.",
     ],
     whoFits: [
-      "Writers, video creators, graphic designers",
+      "Writers, video creators, illustrators, and graphic designers",
       "Anyone with a platform or learning to build one",
-      "People who want to make AI topics accessible to everyone",
-    ],
-  },
-  {
-    id: "organizer",
-    title: "Organizer",
-    tagline: "Be the connective tissue — events, Discord, the day-to-day.",
-    commitment: "1+ event / month or online admin",
-    accentClass: "accent-olive",
-    responsibilities: [
-      "In-person: host or co-organize at least one meetup per month. Support PIC launch events, hackathons, and demo nights.",
-      "Online admin: manage Discord (moderation, welcomes), keep the event calendar updated, design event posters and social cards.",
-      "Connect with local AI communities, NGOs, and venues.",
-      "Pick one or both modes — let us know what fits your schedule.",
-    ],
-    whoFits: [
-      "Organized, reliable, and friendly people",
-      "Comfortable with chat-driven async work",
-      "Event planners, community managers, anyone who likes connecting people",
+      "Young people who want to make AI topics accessible to their peers and communities",
     ],
   },
   {
     id: "researcher",
     title: "Researcher",
-    tagline: "Produce the data and analysis that powers our advocacy.",
+    tagline: "Turn AI risks into data people can see and share.",
     commitment: "3–5 hrs / week",
     accentClass: "accent-fig",
     responsibilities: [
-      "Collect, clean, and analyze data on AI adoption, NGO digital readiness, and public-sector AI procurement across Southeast Asia.",
-      "Produce reports, datasets, and visual summaries the community can publish and cite in advocacy and grant applications.",
-      "Conduct NGO digital-capacity audits — what tools they use, what they're missing, what AI could improve.",
-      "Contribute new datasets and improved methodology to our open data API on AI adoption across 16+ countries.",
+      "Build small, focused research experiments: visualizations, interactive tools, and open datasets that make an AI issue tangible.",
+      "Collect, clean, and analyze data on AI adoption, access gaps, and AI impact globally.",
+      "Produce summaries and findings the community can publish, cite, and share.",
+      "Contribute to open data projects tracking the AI divide across countries.",
     ],
     whoFits: [
-      "Grad students, policy researchers, data journalists, or anyone with quantitative skills",
-      "People interested in AI governance, global development, or public-sector technology",
-      "Writers who can turn raw numbers into readable, citable analysis",
+      "Students, policy researchers, data journalists, or anyone with quantitative skills",
+      "People interested in AI governance, AI safety, or the AI divide",
+      "Developers who enjoy building small interactive tools around real data",
     ],
   },
 ];
@@ -313,7 +175,7 @@ export const MANIFESTO_CLAIMS = [
     claim:
       "AI's benefits are concentrating. This is the expected outcome of building AI to maximize returns for shareholders.",
     evidence:
-      "Five companies control 71% of the world's AI compute, up from 63% eighteen months earlier. US private AI investment reached $285.9 billion in 2025. The Global South received a rounding error.",
+      "Five companies control 71% of the world's AI compute, up from 63% eighteen months earlier. US private AI investment reached $285.9 billion in 2025. The rest of the world received a rounding error.",
     source: "Epoch AI 2025; Stanford HAI 2026 AI Index",
   },
   {
@@ -327,23 +189,23 @@ export const MANIFESTO_CLAIMS = [
   {
     n: "03",
     claim:
-      "Open-source AI built by volunteer communities is one of the few mechanisms that consistently produces tools for people markets ignore.",
+      "Young people will live longest with the consequences of AI decisions being made today — and they are almost entirely absent from those decisions.",
     evidence:
-      "Hugging Face grew from 160,000 to 1.57 million generative AI model repositories in two years. 46% of Fortune 500 leaders prefer open models. The AI Adoption by Country API is MIT-licensed, tracks 16 countries, and is used by researchers for free.",
-    source: "Mozilla Foundation 2024; our own data",
+      "AI governance, model development, and infrastructure investment are led overwhelmingly by people over 40 in a handful of wealthy countries. The communities that will inherit AI's consequences are not at the table.",
+    source: "",
   },
   {
     n: "04",
     claim:
       "AI literacy is not a luxury. AI systems already make decisions about jobs, loans, content, and public services. Communities that cannot read those decisions are subject to them.",
     evidence:
-      "5M+ views of AI literacy content produced by this community, mostly in English and Bahasa Malaysia — languages underrepresented in AI safety discourse.",
-    source: "",
+      "Automated systems screen job applicants, approve or deny loans, moderate speech, and allocate public resources. These decisions are opaque, consequential, and largely unchallenged because most people lack the vocabulary to question them.",
+    source: "AI Now Institute 2025",
   },
   {
     n: "05",
     claim:
-      "The window to build public-interest AI infrastructure is closing. The compute concentration ratio moved from 63% to 71% in eighteen months. The trend is not slowing.",
+      "The window to build informed public understanding of AI is closing. The compute concentration ratio moved from 63% to 71% in eighteen months. The trend is not slowing.",
     evidence:
       "The OECD and the UN both concluded in 2024 that AI must be governed as public commons. The policy consensus exists. The implementation does not. Communities like this one are part of filling that gap.",
     source: "OECD.AI 2025; UN Governing AI for Humanity 2024",
@@ -354,12 +216,12 @@ export const VOLUNTEER_EXPECTATIONS = [
   {
     icon: "🎯",
     title: "Passion for the Mission",
-    body: "You believe AI should serve communities, not shareholders. You show up to contribute, not to build your portfolio.",
+    body: "You believe AI should be understandable to the people it affects — not just the people who build it. You show up to contribute, not to build your portfolio.",
   },
   {
     icon: "🤲",
     title: "Volunteerism",
-    body: "This role is unpaid. Past members have shipped real tools, spoken at conferences, and built working relationships they would not have found otherwise.",
+    body: "This role is unpaid. Contributors here publish content reaching real audiences, connect with researchers globally, and build relationships with people shaping AI policy.",
   },
   {
     icon: "🛠️",
@@ -369,7 +231,7 @@ export const VOLUNTEER_EXPECTATIONS = [
   {
     icon: "📆",
     title: "Commitment",
-    body: "We need 3 to 7 hours a week, every week. Deliver what you commit to. Show up when you say you will.",
+    body: "We need consistent contributions — weekly for creators, focused hours for researchers. Deliver what you commit to. Show up when you say you will.",
   },
   {
     icon: "📱",

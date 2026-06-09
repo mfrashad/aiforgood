@@ -5,9 +5,9 @@ import { ROLE_DETAILS, VOLUNTEER_EXPECTATIONS, SITE } from "@/lib/constants";
 import VolunteerForm from "./VolunteerForm";
 
 export const metadata: Metadata = {
-  title: "Volunteer with AI for Good",
+  title: "Contribute — Youth for Responsible AI",
   description:
-    "Join AI for Good as a Builder, Advocate, or Organizer. Ship open-source AI tools, create content, or run community events — for social good in Southeast Asia.",
+    "Join Youth for Responsible AI as a Creator or Researcher. Make AI safety and responsible AI understandable for everyone — create content, build research experiments, or publish data.",
 };
 
 const ACCENT_COLORS: Record<string, string> = {
@@ -31,11 +31,11 @@ export default function VolunteerPage() {
           <h1
             className="heading-display text-5xl sm:text-6xl text-text-primary mb-6"
           >
-            Volunteer with AI for Good
+            Contribute to Responsible AI
           </h1>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
-            We build open-source AI tools for NGOs, create AI literacy content,
-            and run builder events across Southeast Asia. Everyone here is a volunteer.
+            We make AI safety and responsible AI understandable for everyone — through
+            video, writing, data, and talks. Everyone here is a volunteer.
           </p>
           <a
             href="#apply"
@@ -54,17 +54,18 @@ export default function VolunteerPage() {
               className="text-xl text-text-primary mb-4"
               style={{ fontFamily: "var(--font-serif)", fontWeight: 600 }}
             >
-              About AI for Good
+              About Youth for Responsible AI
             </h2>
             <p className="text-text-secondary leading-relaxed">
-              AI is being built to maximize returns for shareholders. The organizations
-              that could most use it — food banks, refugee legal aid clinics, rural
-              schools — are the ones no company will build for.
+              AI is shaping jobs, money, media, and public services — but most people
+              affected by it have no way to understand it or question it. The people
+              who will live longest with AI&apos;s consequences are the least represented
+              in the conversations about it.
             </p>
             <p className="text-text-secondary leading-relaxed mt-3">
-              AI for Good is a volunteer community. We build open-source tools for
-              NGOs, make AI accessible in multiple languages, and run community events.
-              No one gets paid.
+              Youth for Responsible AI is a volunteer community. We make AI safety
+              and responsible AI content, build research experiments that make AI issues
+              tangible, and bring that work to audiences who need it most. No one gets paid.
             </p>
           </div>
         </div>
@@ -78,9 +79,8 @@ export default function VolunteerPage() {
           {/* Sub-headline */}
           <div className="mb-12 pl-6 border-l-4 border-clay">
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
-              The skill the market pays you to use elsewhere is the scarcest
-              resource in this community. A few hours a week compounds.
-              A sabbatical sets the direction.
+              The ability to explain something clearly is the scarcest resource in AI
+              discourse. A few hours a week compounds. A sustained voice sets the direction.
             </p>
           </div>
 
@@ -154,7 +154,7 @@ export default function VolunteerPage() {
             Who we&apos;re looking for
           </h2>
           <p className="text-lg text-text-secondary mb-12">
-            Beyond role-specific skills, we expect this from every volunteer.
+            Beyond role-specific skills, we expect this from every contributor.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

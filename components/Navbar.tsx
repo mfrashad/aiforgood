@@ -4,8 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 
 const GET_INVOLVED = [
-  { href: "/volunteer", audience: "For Builders", label: "Volunteer →" },
-  { href: "/partners", audience: "For NGOs", label: "Partner with Us →" },
+  { href: "/volunteer", audience: "Creators & Researchers", label: "Contribute →" },
   { href: "/funders", audience: "For Funders", label: "Support the Work →" },
 ];
 
@@ -33,10 +32,7 @@ export default function Navbar() {
             className="text-xl tracking-tight text-text-primary"
             style={{ fontFamily: "var(--font-serif)", fontWeight: 700 }}
           >
-            AI for Good
-          </span>
-          <span className="text-xs font-bold text-clay bg-clay/10 px-2 py-0.5 rounded-full border border-clay/30">
-            .MY
+            Youth for Responsible AI
           </span>
         </a>
 

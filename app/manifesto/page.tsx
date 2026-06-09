@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { MANIFESTO_CLAIMS } from "@/lib/constants";
 
 const TWITTER_TEXT = encodeURIComponent(
-  "AI for Good Malaysia: a volunteer community of builders and content creators making AI work for the people markets ignore. Read the manifesto: https://aiforgood.my/manifesto"
+  "Youth for Responsible AI: a youth-led community making AI safety and responsible AI understandable for everyone. Read the manifesto: https://youthforresponsibleai.com/manifesto"
 );
 
 export default function ManifestoPage() {
@@ -27,13 +27,13 @@ export default function ManifestoPage() {
       <section className="pt-40 pb-16 px-6 border-b-2 border-border">
         <div className="max-w-3xl mx-auto">
           <p className="font-mono text-xs text-text-tertiary mb-6 tracking-wider">
-            Version 1.0 — Published May 2026
+            Version 1.0 — Published 2026
           </p>
           <h1 className="heading-display text-4xl sm:text-5xl text-text-primary mb-6">
             What we believe. Why we exist.
           </h1>
           <p className="text-lg text-text-secondary leading-relaxed max-w-2xl">
-            This document states what AI for Good Malaysia believes and why. It will be updated as the evidence changes.
+            This document states what Youth for Responsible AI believes and why. It will be updated as the evidence changes.
           </p>
         </div>
       </section>

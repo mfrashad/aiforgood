@@ -12,16 +12,12 @@ export default function Footer() {
                 className="text-lg text-text-primary"
                 style={{ fontFamily: "var(--font-serif)", fontWeight: 700 }}
               >
-                AI for Good
-              </span>
-              <span className="text-xs font-semibold text-clay bg-clay/15 px-2 py-0.5 rounded-full">
-                .MY
+                Youth for Responsible AI
               </span>
             </div>
-            <p className="text-sm text-text-secondary leading-relaxed max-w-sm">
-              Open-source AI projects, community, and advocacy for social impact
-              in Southeast Asia and beyond. Built by the community, for the
-              community.
+            <p className="text-sm text-text-secondary leading-relaxed max-w-sm mb-3">
+              A youth-led community publishing content on AI safety, responsible AI,
+              and the real risks of AI — to grow the next generation of informed decision-makers.
             </p>
           </div>
 
@@ -47,10 +43,10 @@ export default function Footer() {
                 Roadmap
               </a>
               <a href="/volunteer" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
-                Volunteer
+                Contribute
               </a>
               <a href="/partners" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
-                Partner with Us
+                Collaborate
               </a>
               <a href="/funders" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
                 Support the Work
@@ -101,10 +97,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-border pt-6 flex flex-wrap justify-between items-center gap-4">
           <p className="text-xs text-text-tertiary">
-            &copy; 2026 AI for Good Malaysia. Open source under MIT License.
-          </p>
-          <p className="text-xs text-text-tertiary">
-            A community initiative from Southeast Asia.
+            &copy; 2026 Youth for Responsible AI. Open under MIT License.
           </p>
         </div>
       </div>

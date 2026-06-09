@@ -1,66 +1,73 @@
 # AI for Good Malaysia
 
-Open-source AI projects, community, and advocacy for social impact in Southeast Asia and beyond.
+A media and science-communication initiative making AI safety and AI literacy understandable for everyone — videos, explainers, and small research experiments in English and Bahasa Malaysia.
 
-**Live site:** [aiforgood-two.vercel.app](https://aiforgood-two.vercel.app)
+**Live site:** [aiforgood.my](https://aiforgood.my)  
+**Part of:** [BuildForPublic](https://buildforpublic.com)
 
 ## What is this?
 
-AI for Good is a hub connecting builders and communities for social impact. The people who need AI most — social impact orgs, NGOs, educators — are rarely in the room where it's being built. We're changing that.
+AI shapes jobs, money, media, and public services — but most people affected by it have no way to understand it or question it. Clear, honest explanation of AI is concentrated in English-speaking tech circles. The people most affected by AI decisions are the least informed about them.
 
-Open-source social impact projects already exist: pasarmalam.app, sedekah.je, wikiimpact. Each built by one person, grown by contributors. They prove the model works, but they stay isolated. No shared infrastructure, no way to build on each other's work.
+AI for Good Malaysia makes AI safety and literacy accessible to Southeast Asian audiences in English and Bahasa Malaysia. We are a volunteer initiative, not a company.
 
-We're building that infrastructure.
+## Three things we do
 
-## Three Initiatives
+### 1. Content & Media *(active)*
 
-### 1. Community *(coming soon)*
+Short-form videos, articles, and infographics explaining AI safety and AI literacy in plain language. No jargon. In English and Bahasa Malaysia.
 
-Biweekly sessions connecting builders to NGOs and social impact orgs. Part workshop, part co-working, part open hangout. We form teams, match real needs to builders, and ship projects that matter.
-
-### 2. Advocacy *(active)*
-
-Educational content making AI accessible to everyone. Talks, short-form videos, blogs, and infographics advocating for responsible AI, AI safety, and open-source AI for social good. Content in English and Bahasa Malaysia.
-
+- 5M+ combined content views
 - 20+ speaking engagements at meetups, conferences, and government briefings
 - Featured on Bernama TV, RTM TV1, Era.fm, and Kosmo
-- 5M+ combined content views
 
-### 3. Open Source Projects *(active)*
+### 2. Research Experiments *(active)*
 
-A growing collection of open-source projects that use AI for social good. Each project ships reusable components — datasets, APIs, templates — so the next builder inherits, not rebuilds.
-
-**Current projects:**
+Small, focused experiments that make AI issues tangible — interactive data visualizations and open datasets anyone can explore, cite, and build on.
 
 | Project | Description | Links |
 |---------|-------------|-------|
-| [aiadoption](https://github.com/mfrashad/aiadoption) | Interactive visualization + open data API for AI adoption across 16 countries | [Live](https://aiadoption-gray.vercel.app) · [API](https://aiadoption-gray.vercel.app/api/v1/countries.json) |
+| [AI Adoption by Country](https://github.com/mfrashad/aiadoption) | Interactive data viz + open API tracking AI adoption across 16 countries | [Live](https://aiadoption-gray.vercel.app) · [API](https://aiadoption-gray.vercel.app/api/v1/countries.json) |
+| [Bookshelf](https://github.com/mfrashad/bookshelf) | Turn your reading library into a shareable poster. Built for World Book Day to surface global literacy numbers. | [Live](https://bookshelf.aiforgood.my) |
 
-## Get Involved
+### 3. Talks & Speaking *(active)*
 
-We're looking for builders, designers, writers, and anyone who wants to use their skills for social good.
+Briefings, talks, and panel sessions at meetups, universities, conferences, and government on AI safety, AI literacy, and the AI divide in Southeast Asia.
+
+## Contribute
+
+We are looking for Creators (video, writing, infographics) and Researchers (data, visualization, open datasets).
 
 | Role | What you'd do |
 |------|---------------|
-| **Builder** | Contribute code to open-source projects. Ship tools that help real orgs. |
-| **Advocate** | Create content, translate materials, speak at events, spread the word. |
-| **Organizer** | Help run meetups, connect with NGOs, coordinate build cycles. |
+| **Creator** | Make AI safety and literacy accessible — short-form video, articles, infographics in English and Bahasa Malaysia. ~1 post/week. |
+| **Researcher** | Turn AI issues into data people can see and share — interactive visualizations, open datasets. 3–5 hrs/week. |
 
-Reach out: rashad@aiforgood.my
+Apply: [aiforgood.my/volunteer](https://aiforgood.my/volunteer)  
+Contact: m.fathyrashad@gmail.com
 
 ## Run locally
 
-No build step — just serve the HTML file:
+```bash
+bun install
+bun run dev
+```
+
+Build for production:
 
 ```bash
-python3 -m http.server 8090
-# or
-npx serve .
+bun run build
 ```
+
+Convex is required for the volunteer form. Set `NEXT_PUBLIC_CONVEX_URL` in `.env.local`.
 
 ## Tech stack
 
-Single `index.html` with Tailwind CSS (CDN). No framework, no dependencies, no build step.
+- **Framework:** Next.js (App Router)
+- **Database:** Convex (volunteer applications)
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+- **Package manager:** Bun
 
 ## License
 

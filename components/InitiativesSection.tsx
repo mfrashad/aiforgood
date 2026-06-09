@@ -2,34 +2,34 @@ import Image from "next/image";
 
 const INITIATIVES = [
   {
-    id: "community",
-    title: "Community",
-    badge: "COMING SOON",
-    accent: "accent-olive",
-    image: "/sprites/initiative-community.png",
-    description:
-      "Biweekly sessions where builders meet NGOs, scope real problems, and form teams. We show up, pair with a real org, and ship.",
-    cta: { label: "Join as Volunteer Committee", href: "/volunteer" },
-  },
-  {
-    id: "advocacy",
-    title: "Advocacy",
+    id: "content",
+    title: "Content & Media",
     badge: "ACTIVE",
     accent: "accent-clay",
     image: "/sprites/initiative-advocacy.png",
     description:
-      "Short-form videos, talks, blogs, and infographics on AI safety and public-interest AI. In English and Bahasa Malaysia. 5M+ views.",
+      "Short-form videos, articles, and infographics explaining AI safety and AI risk in plain language — no jargon, no hype. Made by young people, for everyone.",
     cta: { label: "View Content", href: "#advocacy" },
   },
   {
-    id: "projects",
-    title: "Open Source Projects",
+    id: "research",
+    title: "Research Experiments",
     badge: "ACTIVE",
     accent: "accent-sky",
     image: "/sprites/initiative-projects.png",
     description:
-      "Open-source projects built for real NGO problems. Each one ships a dataset, API, or template so the next builder starts where we left off.",
-    cta: { label: "Browse Projects", href: "#projects" },
+      "Small, focused experiments that make AI issues tangible — interactive data visualizations and open datasets anyone can explore and cite.",
+    cta: { label: "Browse Research", href: "#projects" },
+  },
+  {
+    id: "talks",
+    title: "Talks & Speaking",
+    badge: "ACTIVE",
+    accent: "accent-olive",
+    image: "/sprites/initiative-community.png",
+    description:
+      "Briefings, talks, and panel sessions at universities, conferences, policy forums, and community events on AI safety, AI risk, and responsible AI governance.",
+    cta: { label: "Read the Case", href: "/why-now" },
   },
 ];
 
@@ -38,10 +38,10 @@ export default function InitiativesSection() {
     <section className="section-padding">
       <div className="max-w-5xl mx-auto">
         <h2 className="heading-section text-text-primary text-center mb-3">
-          What we build
+          What we do
         </h2>
         <p className="text-lg text-text-secondary text-center mb-14 max-w-2xl mx-auto">
-          Three things: community sessions, AI literacy content, and open-source projects.
+          Science communication on AI safety and AI risk: content, research experiments, and talks.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">

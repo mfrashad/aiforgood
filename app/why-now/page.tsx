@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Why This Matters Now — AI for Good Malaysia",
+  title: "Why This Matters Now — Youth for Responsible AI",
   description:
-    "Five companies control 71% of global AI compute. 93% of the world's languages are invisible to AI training data. The window to build public-interest AI infrastructure is closing.",
+    "Five companies control 71% of global AI compute. The window to build public understanding of AI — before the decisions are made for us — is narrowing.",
 };
 
 const NOW_CARDS = [
@@ -18,13 +18,13 @@ const NOW_CARDS = [
   {
     accent: "accent-sky",
     label: "The US gets 23 times more AI investment than China",
-    body: "US private AI investment reached $285.9 billion in 2025. China received $13.3 billion. Southeast Asia received a rounding error. The AI frontier is not a global phenomenon. It is concentrated in a handful of zip codes in San Francisco and Seattle. Everywhere else is structurally excluded.",
+    body: "US private AI investment reached $285.9 billion in 2025. China received $13.3 billion. The Global South received a rounding error. The AI frontier is not a global phenomenon — it is concentrated in a handful of zip codes. Everywhere else is structurally excluded.",
     source: "Stanford HAI 2026 AI Index",
   },
   {
     accent: "accent-olive",
     label: "93% of the world's languages are invisible to AI",
-    body: "Only 7% of the world's 7,000 languages appear in published online material. English dominates AI training data at 30%. Malay, Bahasa Indonesia, Tamil, and the languages of Malaysia's indigenous communities are statistical noise. AI systems built on this data will fail anyone who does not speak English. Not as a bug. As an architectural consequence.",
+    body: "Only 7% of the world's 7,000 languages appear in published online material. English dominates AI training data at 30%. AI systems built on this data will fail anyone who does not speak English. Not as a bug. As an architectural consequence.",
     source: "Nature, 2025",
   },
   {
@@ -37,9 +37,9 @@ const NOW_CARDS = [
 
 const NEXT_CARDS = [
   {
-    label: "Southeast Asia's infrastructure gap becomes permanent",
-    body: "Rural areas across Southeast Asia average 55% internet penetration versus 90% in major cities. Only 30% of rural schools have reliable high-speed internet versus 85% of urban schools. AI tools designed for the connected and English-literate will deepen these gaps unless communities actively counter them. The projected $1 trillion AI GDP boost to the region by 2030 will go to those already connected.",
-    source: "Tech Collective SEA, 2025",
+    label: "Young people will live with AI the longest — but are absent from the decisions",
+    body: "The people who will live longest with the consequences of today's AI choices are almost entirely excluded from making them. AI governance, model development, and infrastructure investment are led overwhelmingly by people over 40 in a handful of wealthy countries. The communities that will inherit AI's consequences are not at the table.",
+    source: "",
   },
   {
     label: "AI is used on communities, not by them",
@@ -47,8 +47,8 @@ const NEXT_CARDS = [
     source: "AI Now Institute 2025; MIT Sloan",
   },
   {
-    label: "NGOs are locked out of tools they cannot afford",
-    body: "Governments and NGOs that want AI will buy from vendors with a sales team. Those vendors will not build for a Malaysian food bank or a Philippine refugee legal aid clinic. They will sell a generic product at enterprise pricing. The organizations serving the most vulnerable people will be the last to benefit.",
+    label: "The people most affected by AI are the least informed about it",
+    body: "The organizations and communities most subject to AI decisions — in hiring, credit, content moderation, and public services — have the least access to plain-language explanation of how those systems work. The gap between AI capability and public understanding is growing faster than the AI itself.",
     source: "",
   },
 ];
@@ -56,27 +56,27 @@ const NEXT_CARDS = [
 const BUILD_CARDS = [
   {
     accent: "accent-olive",
-    label: "Open infrastructure anyone can use",
-    body: "The OECD and the UN both concluded in 2024 that core AI components should be governed as public commons: open, interoperable, auditable. The policy consensus exists. Open-source communities building MIT-licensed tools for NGOs are not ahead of their time. They are ahead of most governments in actually doing it.",
+    label: "Open explanation anyone can use",
+    body: "The OECD and the UN both concluded in 2024 that core AI components should be governed as public commons. Open, accessible explanation of AI is part of that commons — it is the mechanism by which people can understand, question, and contest the systems that affect them.",
     source: "OECD.AI 2025; UN 2024",
   },
   {
     accent: "accent-olive",
     label: "A public record of the AI divide",
-    body: "Data that does not exist cannot drive policy. We built the AI Adoption by Country API because no single source tracked this across 16 countries in a usable format. That data is now free. Any researcher, journalist, or NGO can use it. This is what public-interest AI infrastructure looks like in practice.",
+    body: "Data that does not exist cannot drive policy or public understanding. We build open data experiments because no single source tracks AI adoption, transparency, and impact in a usable format. That data is free. Any researcher, journalist, or NGO can use it.",
     source: "",
   },
   {
     accent: "accent-olive",
-    label: "AI literacy in the languages that need it most",
-    body: "Hugging Face grew from 160,000 to 1.57 million generative AI model repositories in two years. 46% of Fortune 500 leaders prefer open models. The technology is there. What is missing is content explaining it in the languages of the people most affected by it. That content is what this community builds.",
-    source: "Mozilla Foundation, 2024",
+    label: "Youth voices in the conversation",
+    body: "The technology is moving fast. What is missing is content explaining it — produced by the generation most affected by it, in language their peers can actually understand and act on. That is what this community builds.",
+    source: "",
   },
 ];
 
 const CTA_CARDS = [
-  { label: "Build something", sub: "Pick your first action", href: "/act" },
-  { label: "Bring us a problem", sub: "For NGOs and public-sector orgs", href: "/partners" },
+  { label: "Get involved", sub: "Create content or run research experiments", href: "/act" },
+  { label: "Collaborate with us", sub: "For newsrooms, educators, and researchers", href: "/partners" },
   { label: "Support this work", sub: "For funders and foundations", href: "/funders" },
 ];
 
@@ -92,7 +92,7 @@ export default function WhyNowPage() {
             className="inline-flex items-center gap-2 mb-8 text-sm font-semibold text-text-primary bg-surface-raised px-5 py-2 rounded-full border-2 border-border"
             style={{ boxShadow: "3px 3px 0px #1a1b1f" }}
           >
-            THE CASE FOR PUBLIC-INTEREST AI
+            THE CASE FOR RESPONSIBLE AI
           </div>
           <h1 className="heading-display text-4xl sm:text-5xl text-text-primary mb-6 max-w-2xl">
             AI is concentrating power.{" "}
@@ -161,7 +161,7 @@ export default function WhyNowPage() {
         <div className="max-w-5xl mx-auto">
           <h2 className="heading-section text-text-primary mb-3">What we can still build</h2>
           <p className="text-lg text-text-secondary mb-10 leading-relaxed">
-            Each problem above has a direct counter: builders and content creators working in public, releasing everything as open-source code.
+            Each problem above has a direct counter: making AI understandable, documenting the divide, and amplifying youth voices.
           </p>
           <div className="grid sm:grid-cols-3 gap-5">
             {BUILD_CARDS.map((card) => (

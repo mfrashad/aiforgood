@@ -15,35 +15,37 @@ export default function HeroSection() {
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Badge */}
-        <div
-          className="inline-flex items-center gap-2 mb-8 text-sm font-semibold text-text-primary bg-surface-raised px-5 py-2 rounded-full border-2 border-border"
-          style={{ boxShadow: "3px 3px 0px #1a1b1f" }}
-        >
-          OPEN SOURCE &middot; COMMUNITY &middot; MALAYSIA
+        <div className="flex flex-wrap items-center gap-3 mb-8">
+          <div
+            className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary bg-surface-raised px-5 py-2 rounded-full border-2 border-border"
+            style={{ boxShadow: "3px 3px 0px #1a1b1f" }}
+          >
+            AI SAFETY &middot; RESPONSIBLE AI &middot; YOUTH-LED
+          </div>
         </div>
 
         {/* Headline */}
-        <h1 className="heading-display text-6xl sm:text-7xl md:text-[5.5rem] lg:text-[6.5rem] text-text-primary mb-8 max-w-2xl">
-          AI<br />
-          for{" "}
-          <span className="text-clay">Good.</span>
+        <h1 className="heading-display text-6xl sm:text-7xl md:text-[5.5rem] lg:text-[6.5rem] text-text-primary mb-8 max-w-3xl">
+          You can't shape AI<br />
+          you don't{" "}
+          <span className="text-clay">understand.</span>
         </h1>
 
         {/* Subtext */}
         <p className="text-lg sm:text-xl text-text-secondary max-w-xl mb-3 leading-relaxed">
-          A community of AI builders who ship tools for NGOs in Southeast Asia.
+          A youth-led community making AI safety and responsible AI understandable — so the next generation can shape the systems that will shape them.
         </p>
         <p className="text-base sm:text-lg text-text-secondary max-w-xl mb-12 leading-relaxed">
-          We build open-source software, create AI literacy content, and keep everything free.
+          Videos, explainers, and research experiments. Open access. Always.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-wrap gap-4">
-          <a href="/volunteer" className="btn-pill btn-pill-clay text-base px-8 py-3">
-            Become a Volunteer
+          <a href="#advocacy" className="btn-pill btn-pill-clay text-base px-8 py-3">
+            Watch the Content
           </a>
-          <a href="#projects" className="btn-pill btn-pill-outline text-base px-8 py-3">
-            View Projects
+          <a href="/volunteer" className="btn-pill btn-pill-outline text-base px-8 py-3">
+            Get Involved
           </a>
         </div>
       </div>

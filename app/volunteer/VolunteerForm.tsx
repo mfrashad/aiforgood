@@ -1,35 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
 
-const BUILDER_SKILLS = [
-  "Frontend",
-  "Backend",
-  "AI / ML",
-  "Mobile",
-  "Design",
-  "Product",
-  "Vibe coding / AI tools",
-  "Other",
-];
+// Set your Formspree form ID here (from formspree.io/forms after creating a form)
+// Or set NEXT_PUBLIC_FORMSPREE_ID in .env.local
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "your-form-id"; // TODO: replace with real ID
 
-const BUILDER_LEVELS = [
-  { value: "experienced", label: "Experienced dev" },
-  { value: "vibe-coder", label: "Vibe coder / AI-assisted" },
-  { value: "learning", label: "Just learning / getting started" },
-  { value: "unsure", label: "Not sure yet" },
-];
-
-const ADVOCATE_FORMATS = [
+const CREATOR_FORMATS = [
   "Short-form video",
   "Blog / article",
   "Tweet / thread",
   "Infographic",
   "Other",
 ];
-const ADVOCATE_LANGUAGES = ["English", "Bahasa Malaysia", "Both", "Other"];
+const CREATOR_LANGUAGES = ["English", "Other language"];
+
+const RESEARCHER_SKILLS = [
+  "Data analysis",
+  "Data visualization",
+  "Frontend / interactive tools",
+  "Backend / APIs",
+  "Academic / qualitative research",
+  "Science writing",
+  "Other",
+];
+
 const REFERRAL_SOURCES = [
   "Twitter / X",
   "TikTok",
@@ -40,9 +35,7 @@ const REFERRAL_SOURCES = [
   "Other",
 ];
 
-type Role = "builder" | "advocate" | "organizer";
-type BuilderIdea = "have" | "match" | "either";
-type OrgMode = "in-person" | "online" | "both";
+type Role = "creator" | "researcher";
 
 const ROLE_INFO: {
   id: Role;
@@ -52,41 +45,29 @@ const ROLE_INFO: {
   expectations: string[];
 }[] = [
   {
-    id: "builder",
-    title: "Builder",
-    commitment: "3–7 hrs / week",
-    description:
-      "Build open-source AI tools that solve real social problems — for NGOs, underserved communities, and local causes in Southeast Asia. Not random open source; tools that actually matter.",
-    expectations: [
-      "Take ownership of one project end-to-end as PIC (Person In Charge)",
-      "Projects come from NGO needs, local problems, or your own idea",
-      "All levels welcome — experienced devs, vibe coders, and total beginners",
-      "No GitHub account required to apply",
-    ],
-  },
-  {
-    id: "advocate",
-    title: "Advocate",
+    id: "creator",
+    title: "Creator",
     commitment: "~1 post / week",
     description:
-      "Be the voice of AI for Good. Create content that educates people on AI for social good, raises awareness of AI safety and impact issues, or promotes what the community is building.",
+      "Make AI safety and responsible AI accessible to everyone — short-form video, articles, infographics, or threads in any language.",
     expectations: [
       "1 post/week in any format: video, blog, tweet, infographic",
-      "Topics: AI social impact / safety, OR promoting AI for Good's work",
-      "English or Bahasa Malaysia — pick whatever suits you",
-      "No prior audience needed — just consistency and heart",
+      "Topics: AI safety, AI risk, algorithmic bias, responsible AI",
+      "Any language — your language is a contribution in itself",
+      "No prior audience needed — just consistency and clarity",
     ],
   },
   {
-    id: "organizer",
-    title: "Organizer",
-    commitment: "1+ event/month or online admin",
+    id: "researcher",
+    title: "Researcher",
+    commitment: "3–5 hrs / week",
     description:
-      "Keep the community alive and connected — through events, Discord, or day-to-day operations. Pick the mode that fits your schedule.",
+      "Turn AI risks into data people can see and share — interactive visualizations, open datasets, and focused research experiments anyone can explore and cite.",
     expectations: [
-      "In-person: host or co-organize ≥1 meetup per month",
-      "Online: Discord moderation, event calendar, posters, logistics",
-      "Pick one or both modes — flexibility welcome",
+      "Build small, focused experiments that make an AI issue tangible",
+      "Collect, clean, and analyze data on AI adoption and AI impact globally",
+      "Produce summaries and findings the community can publish and share",
+      "Contribute to open data projects tracking the AI divide",
     ],
   },
 ];
@@ -102,17 +83,12 @@ interface FormData {
   about: string;
   motivation: string;
   roles: Role[];
-  builderLevel: string;
-  builderIdea: BuilderIdea | "";
-  builderProject: string;
-  builderSkills: string[];
-  builderGithub: string;
-  advocateFormats: string[];
-  advocateLanguages: string[];
-  advocateSamples: string;
-  organizerMode: OrgMode | "";
-  organizerCity: string;
-  organizerExperience: string;
+  creatorFormats: string[];
+  creatorLanguages: string[];
+  creatorSamples: string;
+  researcherFocus: string;
+  researcherSkills: string[];
+  researcherGithub: string;
   acknowledgesUnpaid: boolean;
   referralSource: string;
   notes: string;
@@ -131,17 +107,12 @@ const INITIAL: FormData = {
   about: "",
   motivation: "",
   roles: [],
-  builderLevel: "",
-  builderIdea: "",
-  builderProject: "",
-  builderSkills: [],
-  builderGithub: "",
-  advocateFormats: [],
-  advocateLanguages: [],
-  advocateSamples: "",
-  organizerMode: "",
-  organizerCity: "",
-  organizerExperience: "",
+  creatorFormats: [],
+  creatorLanguages: [],
+  creatorSamples: "",
+  researcherFocus: "",
+  researcherSkills: [],
+  researcherGithub: "",
   acknowledgesUnpaid: false,
   referralSource: "",
   notes: "",
@@ -170,12 +141,8 @@ function validate(d: FormData): Errors {
   else if (d.motivation.trim().length < 20)
     e.motivation = "Please write at least 20 characters";
   if (d.roles.length === 0) e.roles = "Please select at least one role";
-  if (d.roles.includes("builder") && !d.builderIdea)
-    e.builderIdea = "Please select an option";
-  if (d.roles.includes("advocate") && d.advocateFormats.length === 0)
-    e.advocateFormats = "Select at least one format";
-  if (d.roles.includes("organizer") && !d.organizerMode)
-    e.organizerMode = "Please select a mode";
+  if (d.roles.includes("creator") && d.creatorFormats.length === 0)
+    e.creatorFormats = "Select at least one format";
   if (!d.acknowledgesUnpaid) e.acknowledgesUnpaid = "You must check this box to apply";
   return e;
 }
@@ -329,7 +296,6 @@ function SuccessCard() {
 }
 
 export default function VolunteerForm() {
-  const create = useMutation(api.volunteers.create);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [serverError, setServerError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Errors>({});
@@ -354,44 +320,43 @@ export default function VolunteerForm() {
     setStatus("submitting");
     setServerError(null);
     try {
-      await create({
+      const payload: Record<string, string> = {
         name: d.name.trim(),
         email: d.email.trim(),
-        phone: d.phone || undefined,
         country: d.country.trim(),
-        city: d.city || undefined,
-        linkedin: d.linkedin || undefined,
-        portfolio: d.portfolio || undefined,
+        roles: d.roles.join(", "),
         about: d.about.trim(),
         motivation: d.motivation.trim(),
-        roles: d.roles,
-        acknowledgesUnpaid: d.acknowledgesUnpaid,
-        referralSource: d.referralSource || undefined,
-        notes: d.notes || undefined,
-        ...(d.roles.includes("builder")
-          ? {
-              builderLevel: d.builderLevel || undefined,
-              builderIdea: d.builderIdea as BuilderIdea,
-              builderProject: d.builderProject || undefined,
-              builderSkills: d.builderSkills.length ? d.builderSkills : undefined,
-              builderGithub: d.builderGithub || undefined,
-            }
-          : {}),
-        ...(d.roles.includes("advocate")
-          ? {
-              advocateFormats: d.advocateFormats.length ? d.advocateFormats : undefined,
-              advocateLanguages: d.advocateLanguages.length ? d.advocateLanguages : undefined,
-              advocateSamples: d.advocateSamples || undefined,
-            }
-          : {}),
-        ...(d.roles.includes("organizer")
-          ? {
-              organizerMode: d.organizerMode as OrgMode,
-              organizerCity: d.organizerCity || undefined,
-              organizerExperience: d.organizerExperience || undefined,
-            }
-          : {}),
+        acknowledgesUnpaid: d.acknowledgesUnpaid ? "yes" : "no",
+      };
+      if (d.phone) payload.phone = d.phone;
+      if (d.city) payload.city = d.city;
+      if (d.linkedin) payload.linkedin = d.linkedin;
+      if (d.portfolio) payload.portfolio = d.portfolio;
+      if (d.referralSource) payload.referralSource = d.referralSource;
+      if (d.notes) payload.notes = d.notes;
+      if (d.roles.includes("creator")) {
+        if (d.creatorFormats.length) payload.creatorFormats = d.creatorFormats.join(", ");
+        if (d.creatorLanguages.length) payload.creatorLanguages = d.creatorLanguages.join(", ");
+        if (d.creatorSamples) payload.creatorSamples = d.creatorSamples;
+      }
+      if (d.roles.includes("researcher")) {
+        if (d.researcherFocus) payload.researcherFocus = d.researcherFocus;
+        if (d.researcherSkills.length) payload.researcherSkills = d.researcherSkills.join(", ");
+        if (d.researcherGithub) payload.researcherGithub = d.researcherGithub;
+      }
+
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
       });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error((body as { error?: string }).error ?? "Submission failed. Please try again.");
+      }
+
       setStatus("success");
     } catch (err) {
       setStatus("error");
@@ -438,7 +403,7 @@ export default function VolunteerForm() {
               value={d.phone}
               onChange={(e) => set("phone", e.target.value)}
               className={inputBase}
-              placeholder="+60 12 345 6789"
+              placeholder="+1 555 000 0000"
             />
           </div>
           <div id="field-country">
@@ -448,7 +413,7 @@ export default function VolunteerForm() {
               value={d.country}
               onChange={(e) => set("country", e.target.value)}
               className={inputBase}
-              placeholder="Malaysia"
+              placeholder="Your country"
             />
             <ErrMsg msg={errors.country} />
           </div>
@@ -459,7 +424,7 @@ export default function VolunteerForm() {
               value={d.city}
               onChange={(e) => set("city", e.target.value)}
               className={inputBase}
-              placeholder="Kuala Lumpur"
+              placeholder="Your city"
             />
           </div>
           <div id="field-linkedin">
@@ -487,7 +452,7 @@ export default function VolunteerForm() {
         </div>
       </div>
 
-      {/* ── 2. About yourself ── */}
+      {/* ── 2. Tell us about yourself ── */}
       <div>
         <SectionHeading>Tell us about yourself</SectionHeading>
         <div className="space-y-5">
@@ -517,7 +482,7 @@ export default function VolunteerForm() {
                 maxLength={1000}
                 rows={4}
                 className={inputBase}
-                placeholder="What draws you to AI for Good? What would you like to contribute or learn?"
+                placeholder="What draws you to Youth for Responsible AI? What would you like to contribute or learn?"
               />
               <span className="absolute bottom-2.5 right-3 text-xs text-text-secondary/40 select-none pointer-events-none">
                 {d.motivation.length}/1000
@@ -528,7 +493,7 @@ export default function VolunteerForm() {
         </div>
       </div>
 
-      {/* ── 3. Role selection — each card expands with its own detail form ── */}
+      {/* ── 3. Role selection ── */}
       <div id="field-roles">
         <SectionHeading>Which role(s) are you applying for?</SectionHeading>
         <p className="text-sm text-text-secondary mb-5">
@@ -537,131 +502,39 @@ export default function VolunteerForm() {
         </p>
         <div className="space-y-4">
 
-          {/* Builder */}
+          {/* Creator */}
           <RoleCard
             role={ROLE_INFO[0]}
-            selected={d.roles.includes("builder")}
-            onToggle={() => set("roles", toggle(d.roles, "builder"))}
+            selected={d.roles.includes("creator")}
+            onToggle={() => set("roles", toggle(d.roles, "creator"))}
           >
-            <div>
-              <Label text="How would you describe your current level?" />
+            <div id="field-creatorFormats">
+              <Label text="Content formats you work in" required />
               <div className="flex flex-wrap gap-2.5">
-                {BUILDER_LEVELS.map((lvl) => (
-                  <PillToggle
-                    key={lvl.value}
-                    label={lvl.label}
-                    active={d.builderLevel === lvl.value}
-                    onClick={() =>
-                      set("builderLevel", d.builderLevel === lvl.value ? "" : lvl.value)
-                    }
-                  />
-                ))}
-              </div>
-              <p className="text-xs text-text-secondary/50 mt-2">
-                No wrong answer — we match projects to where you&apos;re at.
-              </p>
-            </div>
-
-            <div id="field-builderIdea">
-              <Label
-                text="Do you have a project idea, or would you like to be matched to one?"
-                required
-              />
-              <div className="flex flex-wrap gap-3">
-                {(
-                  [
-                    { value: "have" as BuilderIdea, label: "I have an idea" },
-                    { value: "match" as BuilderIdea, label: "Match me to a project" },
-                    { value: "either" as BuilderIdea, label: "Either works" },
-                  ]
-                ).map((opt) => (
-                  <PillToggle
-                    key={opt.value}
-                    label={opt.label}
-                    active={d.builderIdea === opt.value}
-                    onClick={() => set("builderIdea", opt.value)}
-                  />
-                ))}
-              </div>
-              <ErrMsg msg={errors.builderIdea} />
-            </div>
-
-            {d.builderIdea === "have" && (
-              <div>
-                <Label text="Describe your project idea" />
-                <textarea
-                  value={d.builderProject}
-                  onChange={(e) => set("builderProject", e.target.value)}
-                  maxLength={1000}
-                  rows={3}
-                  className={inputBase}
-                  placeholder="Who it helps, what problem it solves, rough idea of scope — even a rough idea is fine..."
-                />
-              </div>
-            )}
-
-            <div>
-              <Label text="Skills / tools you work with" />
-              <div className="flex flex-wrap gap-2.5">
-                {BUILDER_SKILLS.map((skill) => (
-                  <PillToggle
-                    key={skill}
-                    label={skill}
-                    active={d.builderSkills.includes(skill)}
-                    onClick={() => set("builderSkills", toggle(d.builderSkills, skill))}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <Label text="GitHub username (optional)" />
-              <input
-                type="text"
-                value={d.builderGithub}
-                onChange={(e) => set("builderGithub", e.target.value)}
-                className={inputBase}
-                placeholder="yourusername — skip if you don't have one yet"
-              />
-              <p className="text-xs text-text-secondary/50 mt-1.5">
-                No GitHub? No problem — we&apos;ll help you get set up if needed.
-              </p>
-            </div>
-          </RoleCard>
-
-          {/* Advocate */}
-          <RoleCard
-            role={ROLE_INFO[1]}
-            selected={d.roles.includes("advocate")}
-            onToggle={() => set("roles", toggle(d.roles, "advocate"))}
-          >
-            <div id="field-advocateFormats">
-              <Label text="Preferred content formats" required />
-              <div className="flex flex-wrap gap-2.5">
-                {ADVOCATE_FORMATS.map((fmt) => (
+                {CREATOR_FORMATS.map((fmt) => (
                   <PillToggle
                     key={fmt}
                     label={fmt}
-                    active={d.advocateFormats.includes(fmt)}
+                    active={d.creatorFormats.includes(fmt)}
                     onClick={() =>
-                      set("advocateFormats", toggle(d.advocateFormats, fmt))
+                      set("creatorFormats", toggle(d.creatorFormats, fmt))
                     }
                   />
                 ))}
               </div>
-              <ErrMsg msg={errors.advocateFormats} />
+              <ErrMsg msg={errors.creatorFormats} />
             </div>
 
             <div>
               <Label text="Languages you create content in" />
               <div className="flex flex-wrap gap-2.5">
-                {ADVOCATE_LANGUAGES.map((lang) => (
+                {CREATOR_LANGUAGES.map((lang) => (
                   <PillToggle
                     key={lang}
                     label={lang}
-                    active={d.advocateLanguages.includes(lang)}
+                    active={d.creatorLanguages.includes(lang)}
                     onClick={() =>
-                      set("advocateLanguages", toggle(d.advocateLanguages, lang))
+                      set("creatorLanguages", toggle(d.creatorLanguages, lang))
                     }
                   />
                 ))}
@@ -672,63 +545,57 @@ export default function VolunteerForm() {
               <Label text="Link to past content or portfolio (optional)" />
               <input
                 type="url"
-                value={d.advocateSamples}
-                onChange={(e) => set("advocateSamples", e.target.value)}
+                value={d.creatorSamples}
+                onChange={(e) => set("creatorSamples", e.target.value)}
                 className={inputBase}
                 placeholder="https://..."
               />
+              <p className="text-xs text-text-secondary/50 mt-1.5">
+                TikTok, Instagram, YouTube, blog, newsletter — anything that shows your work.
+              </p>
             </div>
           </RoleCard>
 
-          {/* Organizer */}
+          {/* Researcher */}
           <RoleCard
-            role={ROLE_INFO[2]}
-            selected={d.roles.includes("organizer")}
-            onToggle={() => set("roles", toggle(d.roles, "organizer"))}
+            role={ROLE_INFO[1]}
+            selected={d.roles.includes("researcher")}
+            onToggle={() => set("roles", toggle(d.roles, "researcher"))}
           >
-            <div id="field-organizerMode">
-              <Label text="Which mode suits you?" required />
-              <div className="flex flex-wrap gap-3">
-                {(
-                  [
-                    { value: "in-person" as OrgMode, label: "In-person events" },
-                    { value: "online" as OrgMode, label: "Online admin" },
-                    { value: "both" as OrgMode, label: "Both" },
-                  ]
-                ).map((opt) => (
-                  <PillToggle
-                    key={opt.value}
-                    label={opt.label}
-                    active={d.organizerMode === opt.value}
-                    onClick={() => set("organizerMode", opt.value)}
-                  />
-                ))}
-              </div>
-              <ErrMsg msg={errors.organizerMode} />
-            </div>
-
-            {(d.organizerMode === "in-person" || d.organizerMode === "both") && (
-              <div>
-                <Label text="Which city would you host meetups in?" />
-                <input
-                  type="text"
-                  value={d.organizerCity}
-                  onChange={(e) => set("organizerCity", e.target.value)}
-                  className={inputBase}
-                  placeholder="Kuala Lumpur"
-                />
-              </div>
-            )}
-
             <div>
-              <Label text="Any community management or event experience? (optional)" />
+              <Label text="What AI issue do you want to explore? (optional)" />
               <textarea
-                value={d.organizerExperience}
-                onChange={(e) => set("organizerExperience", e.target.value)}
+                value={d.researcherFocus}
+                onChange={(e) => set("researcherFocus", e.target.value)}
                 maxLength={500}
                 rows={3}
                 className={inputBase}
-                placeholder="Previous roles, events organized, communities managed — or just tell us you're keen to start..."
+                placeholder="e.g. AI adoption gaps in the Global South, facial recognition bias, AI energy use, model transparency — even a rough idea is fine..."
+              />
+            </div>
+
+            <div>
+              <Label text="Skills / tools you work with" />
+              <div className="flex flex-wrap gap-2.5">
+                {RESEARCHER_SKILLS.map((skill) => (
+                  <PillToggle
+                    key={skill}
+                    label={skill}
+                    active={d.researcherSkills.includes(skill)}
+                    onClick={() => set("researcherSkills", toggle(d.researcherSkills, skill))}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Label text="GitHub (optional)" />
+              <input
+                type="text"
+                value={d.researcherGithub}
+                onChange={(e) => set("researcherGithub", e.target.value)}
+                className={inputBase}
+                placeholder="yourusername"
               />
             </div>
           </RoleCard>
@@ -737,7 +604,7 @@ export default function VolunteerForm() {
         <ErrMsg msg={errors.roles} />
       </div>
 
-      {/* ── 4. Closing ── */}
+      {/* ── 4. Final details ── */}
       <div>
         <SectionHeading>Final details</SectionHeading>
         <div className="space-y-5">
@@ -784,7 +651,7 @@ export default function VolunteerForm() {
                 <span className="text-text-primary font-medium">
                   unpaid and volunteer-run
                 </span>
-                , and I&apos;m committing 3–7 hours per week.{" "}
+                , and I&apos;m committing to consistent weekly contributions.{" "}
                 <span className="text-clay">*</span>
               </label>
               <ErrMsg msg={errors.acknowledgesUnpaid} />

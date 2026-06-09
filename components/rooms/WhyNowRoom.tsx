@@ -6,19 +6,19 @@ const NOW_CARDS = [
   {
     accent: "accent-clay",
     label: "AI compute is owned by five companies",
-    body: "Amazon, Google, Meta, Microsoft, and Oracle control 71% of the world's cumulative AI compute, up from 63% eighteen months earlier. Any NGO or government that needs AI pays rent to this oligopoly.",
+    body: "Amazon, Google, Meta, Microsoft, and Oracle control 71% of the world's cumulative AI compute, up from 63% eighteen months earlier. Any community, organization, or government that needs AI pays rent to this oligopoly.",
     source: "Epoch AI, 2025",
   },
   {
     accent: "accent-sky",
     label: "US gets 23× more AI investment than China",
-    body: "US private AI investment reached $285.9 billion in 2025. Southeast Asia received a rounding error. The AI frontier is concentrated in a handful of zip codes in San Francisco and Seattle. Everywhere else is structurally excluded.",
+    body: "US private AI investment reached $285.9 billion in 2025. The rest of the world received a rounding error. The AI frontier is concentrated in a handful of zip codes in San Francisco and Seattle. Everywhere else is structurally excluded.",
     source: "Stanford HAI 2026 AI Index",
   },
   {
     accent: "accent-olive",
     label: "Premium AI is widening the opportunity gap",
-    body: "Free-tier AI is not the same product as paid. Workers, students, and founders with access to Claude Max or GPT-4 get near-expert tutoring, legal drafting, code review, and business strategy on demand. Those on the free tier get a weaker model with tighter limits. The gap compounds: better AI means better grades, stronger job applications, faster businesses. High-income workers are already 21 percentage points more likely to use AI than low-income workers.",
+    body: "Free-tier AI is not the same product as paid. Workers, students, and founders with access to premium models get near-expert tutoring, legal drafting, code review, and business strategy on demand. Those on the free tier get a weaker model with tighter limits. The gap compounds. High-income workers are already 21 percentage points more likely to use AI than low-income workers.",
     source: "OECD 2026; Pew Research 2025",
   },
   {
@@ -31,9 +31,9 @@ const NOW_CARDS = [
 
 const NEXT_CARDS = [
   {
-    label: "Southeast Asia's infrastructure gap becomes permanent",
-    body: "Rural areas across Southeast Asia average 55% internet penetration versus 90% in major cities. Only 30% of rural schools have reliable high-speed internet versus 85% of urban schools. AI tools designed for the connected and English-literate will deepen these gaps unless communities actively counter them. The projected $1 trillion AI GDP boost to the region by 2030 will go to those already connected.",
-    source: "Tech Collective SEA, 2025",
+    label: "AI governance is being decided without young people",
+    body: "The people who will live longest with the consequences of today's AI decisions — young people — are almost entirely absent from those decisions. AI governance, model development, and infrastructure investment are led overwhelmingly by people over 40 in a handful of wealthy countries.",
+    source: "",
   },
   {
     label: "AI is used on communities, not by them",
@@ -41,27 +41,27 @@ const NEXT_CARDS = [
     source: "AI Now Institute 2025; MIT Sloan",
   },
   {
-    label: "NGOs are locked out of tools they cannot afford",
-    body: "Governments and NGOs that want AI will buy from vendors with a sales team. Those vendors will not build for a Malaysian food bank or a Philippine refugee legal aid clinic. They will sell a generic product at enterprise pricing. The organizations serving the most vulnerable people will be the last to benefit.",
+    label: "The people most subject to AI have the least understanding of it",
+    body: "Automated systems make decisions about hiring, credit, content moderation, and public services. The communities with the least power have the least recourse — and the least access to plain-language explanation of how those systems work. The gap between AI capability and public understanding is growing.",
     source: "",
   },
 ];
 
 const BUILD_CARDS = [
   {
-    label: "Open infrastructure anyone can use",
-    body: "The OECD and the UN both concluded in 2024 that core AI components should be governed as public commons: open, interoperable, auditable. The policy consensus exists. Open-source communities building MIT-licensed tools for NGOs are not ahead of their time. They are ahead of most governments in actually doing it.",
+    label: "Open explanation anyone can use",
+    body: "The OECD and the UN both concluded in 2024 that core AI components should be governed as public commons. Open, accessible explanation of AI is part of that commons — it is the mechanism by which people can understand, question, and contest the systems that affect them.",
     source: "OECD.AI 2025; UN 2024",
   },
   {
     label: "A public record of the AI divide",
-    body: "Data that does not exist cannot drive policy. We built the AI Adoption by Country API because no single source tracked this across 16 countries in a usable format. That data is now free. Any researcher, journalist, or NGO can use it. This is what public-interest AI infrastructure looks like in practice.",
+    body: "Data that does not exist cannot drive public understanding. We build open data experiments on AI adoption, transparency, and impact because no single source tracks this in a usable format. That data is free. Any researcher, journalist, or educator can use it.",
     source: "",
   },
   {
-    label: "AI literacy in the languages that need it most",
-    body: "Hugging Face grew from 160,000 to 1.57 million generative AI model repositories in two years. 46% of Fortune 500 leaders prefer open models. The technology is there. What is missing is content explaining it in the languages of the people most affected by it. That content is what this community builds.",
-    source: "Mozilla Foundation, 2024",
+    label: "Youth voices in the conversation",
+    body: "The technology is moving fast. What is missing is content explaining it — produced by the generation most affected by it, in language their peers can actually understand. That is what this community builds.",
+    source: "",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function WhyNowRoom() {
         <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
           <div>
             <p className="font-mono text-xs text-text-tertiary tracking-wider mb-3">
-              THE CASE FOR PUBLIC-INTEREST AI
+              THE CASE FOR RESPONSIBLE AI
             </p>
             <h2 className="heading-section text-text-primary">
               AI is concentrating power.
